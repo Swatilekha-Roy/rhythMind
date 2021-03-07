@@ -134,7 +134,86 @@
         outline: none !important;
       }
 
-      
+      .story-btn {
+  position:relative ;
+  display: inline-block;
+  
+  left:210px;
+  top: 2px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+        border-color: #000000;
+        cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+
+      .story-styles {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        text-align: center;
+        color: gray;
+        /*position: absolute;*/
+        height: auto;
+        max-width: 1000px;
+        margin: auto;
+        font-size:x-large;
+        background-color: transparent;
+        z-index: 3;
+        display: "none";
+        
+         /* Starting position */
+ -moz-transform:translateY(50%);
+ -webkit-transform:translateY(50%);	
+ transform:translateY(50%);
+      }
+      .story{
+
+ /* Apply animation to this element */	
+ -moz-animation: story 25s linear infinite;
+ -webkit-animation: story 25s linear infinite;
+ animation: story 25s linear infinite;
+      }
+
+/* Move it (define the animation) */
+@-moz-keyframes story {
+ 0%   { -moz-transform: translateY(100%); }
+ 100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes story {
+ 0%   { -webkit-transform: translateY(100%); }
+ 100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes story {
+ 0%   { 
+ -moz-transform: translateY(100%); /* Browser bug fix */
+ -webkit-transform: translateY(100%); /* Browser bug fix */
+ transform: translateY(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(-100%); /* Browser bug fix */
+ -webkit-transform: translateY(-100%); /* Browser bug fix */
+ transform: translateY(-100%); 
+ }
+}
+.story:hover {
+ -moz-animation-play-state: paused;
+ -webkit-animation-play-state: paused;
+ animation-play-state: paused;
+ }
 
     </style>
     
@@ -145,9 +224,27 @@
                 <source src="/sounds/rain_s.mp3" type="audio/mp3">
               </audio>
     <div class="rain-container" controls id="myvideo">
-
+ 
       <div class="rain">      
-        
+        <button class="story-btn" onclick="toggleCheck()">Read a story</button>
+      <div class="story-styles" id="storyId">
+          The gentle spray that touches your face is refreshing, to say the least.
+          <br> A break from your monotonous nine to five cycle and an escape into the wilderness-
+          <br> the sudden plan was not a mistake after all.
+          <br><br>Back here sitting in this simple habitat of the gypsies and munching on roasted peanuts,
+          <br> you realize that life is so much simpler than it sometimes reveals itself to be. 
+          <br><br>Just like the clearing of the forest where your hut has been set down on,
+          <br> there is also a clearing in your own life.
+          <br>And you get there the same way you got here, by following your instinct and the map.
+          <br> Right through the woods, never past it.
+          <br><br>The rain washing down all the dirt of the past while you mourn the gone makes you feel 
+          <br>lighter than you have been in a while.
+          <br> Someday soon, you know, you will have moved on from what has held you back. 
+          <br><br>As you follow the trail of your thoughts freely,
+          <br> the hundreds of forest sounds all muffled together like a nightly jazz
+          <br> almost makes you wonder why you would ever go back home.
+          <br><br><br>‘But you know why’, your heart whispers.
+        </div>     
       </div>
     </div>
 
@@ -163,6 +260,11 @@
           } else if (elem.msRequestFullscreen) { /* IE11 */
             elem.msRequestFullscreen();
           }
+        }
+
+        function toggleCheck(){
+          var st=document.getElementById("storyId");
+          st.classList.add("story");
         }
 
     </script>
