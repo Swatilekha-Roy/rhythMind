@@ -61,7 +61,7 @@ app.get("/:name/:s1/:s2/:a1/:a2/:p1/:p2", (req, res) => {
 });
 app.get("/:name",(req,res)=>{
   //search_id={};
-  res.render("index.ejs",{currentUser:req.params.name,songs:search_id});
+  res.render("index.ejs",{currentUser:req.params.name,songs:search_id,img:images});
 })
 
 app.get("/landscape/snow",(req,res)=>{
@@ -113,6 +113,7 @@ request.get(option ,function(error, response, body){
  var i;
  //console for images
   for(i=0;i<12;i++){
+    images.push(body.photos[i].src.large);
     console.log(body.photos[i].src.large); //images for slideshow
   }
 })
