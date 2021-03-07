@@ -80,7 +80,7 @@ app.get("/landscape/fireflies",(req,res)=>{
   res.render("fireflies");
 })
 app.get("/",(req,res)=>{
-  res.redirect("/auth/spotify");
+  res.render("index",{currentUser:"",songs:""});
 })
 app.get("/:name/search/:emotion",function(req,res){
 //  request.get("https://serpapi.com/playground?q=calm&tbm=isch&ijn=0",function(error,response,body){
