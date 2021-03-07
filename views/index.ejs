@@ -41,7 +41,7 @@
 		<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg" style="background:#346d7e">
 		    <div class="container">
 		        <a class="navbar-brand" href="#">
-		        	<img src="images/navbar_logo.png" width="160" background= "white">
+		        	<img src="images/logo.png" width="160" background= "white">
 		        </a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		            <span class="navbar-toggler-icon"></span>
@@ -70,10 +70,10 @@
 						<li class="nav-item">
 		                    
 							<% if(!(currentUser !== undefined && currentUser !== '')) { %>
-								<a class="nav-link scroll-link" href="/auth/spotify"><button type="button" class="login-btn btn">Log in</button></a>
+								<a class="nav-link scroll-link" href="/auth/spotify"><button type="button" class="login-btn btn">Log in with <i class="fa fa-spotify" aria-hidden="true"></i></button></a>
 								<% } else { %>
 								<!-- logged in code -->
-								<a class="nav-link scroll-link"><button type="button" class="login-btn btn">Logged in as <%=currentUser%></button></a>
+								<a class="nav-link scroll-link"><button type="button" class="login-btn btn"><%=currentUser%></button></a>
 								<% } %>
 		                </li>
 		            </ul>
@@ -119,8 +119,8 @@
 <div id="songs">
 <% if(songs.s1) { %>
 	<h3><strong>Songs Recommended</strong></h3>
-	<iframe src="https://open.spotify.com/embed/track/<%=songs.s1%>" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-	<iframe src="https://open.spotify.com/embed/track/<%=songs.s2%>" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://open.spotify.com/embed/track/<%=songs.s1%>" width="300" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://open.spotify.com/embed/track/<%=songs.s2%>" width="300" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 	<br><br><br>
 	<h3><strong>Playlist Recommended</strong></h3>
 	<iframe src="https://open.spotify.com/embed/playlist/<%=songs.p1%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -131,6 +131,9 @@
 	<iframe src="https://open.spotify.com/embed/album/<%=songs.a2%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 	<% } %>
 </div>
+
+
+
 
 
 		<!-- Top Content -->
@@ -156,7 +159,7 @@
 
 
 			<div style="width: 100vw; height: 90vh; margin-top:20vh;">
-				<h2 style="text-align: left; margin: 2%; font-size: 35px;"><strong>Let's exercise together</strong></h2>
+				<h2 style="text-align: left; margin: 2%; font-size: 35px;"><strong>Let's exercise together!</strong></h2>
 				<br>
 				<div class="landscape">
 					<p>Breathe In</p>
@@ -204,12 +207,23 @@
 		<br>
 		<br>
 
+
+		<h2 style="font-size: 30px; text-align: left; margin-left: 4%;">Somewhere Else</h2>
+			<p style="text-align: left; margin-left: 4%;"">
+				Immerse yourself in our unique listening experience which will leave you all calm and fulfilled. <br>
+				For best experience, we recommend using headphones or earphones.
+			</p>
+			<br>
+			<br>
+
         <div class="row">
-			<div class="col footer-bottom" style="margin-bottom: 80px;">
-				<h2>any heading</h2>
-				   <a class="scroll-link" href="#carouselExampleControls"><i style="color: rebeccapurple;" class="fas fa-chevron-down"></i></a>
-				</div>
+			
+			<div class="col footer-bottom">
+				<a class="scroll-link" href="#carouselExampleControls"><i style="color: #346d7e" class="fas fa-chevron-down"></i></a>
+			</div>
+	 </div>
 		</div>
+
 
 		<div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
 			<div class="carousel-inner">
@@ -218,9 +232,10 @@
 				<div class="carousel-caption text-lg-left d-md-block" style="top:15vh;">
 					<!-- <h5>First slide label</h5>/ -->
 					<p>Remember that one fine night in the woods, sitting on the mud paved floor with your feet crossed 
-						one over the other. The light glow of the lantern beside you with its quivering flame…
-						<br><br>
-
+						one over the other. The light glow of the lantern beside you with its quivering flame
+						
+					</p>
+					<p id="text">
 					  almost feels like a hug which makes you smile to yourself. Your thoughts are only 
 					  interrupted by the occasional sound of a distant animal calling its mate and the gentle pitter patter.
 
@@ -320,8 +335,6 @@
         </div>
     </div>
 </div>
-
-<iframe src='https://webchat.botframework.com/embed/Buzzz_Bot?s=c0AALM926l8.b6q7w5YGl6ZmBtRI9Xm5_BziLQsqQBQvCTe9z4YypIU'  style='min-width: 400px; width: 50%; min-height: 500px; align-content: center;'></iframe>
         <!-- Footer -->
         <footer>
 	        <div class="container">
