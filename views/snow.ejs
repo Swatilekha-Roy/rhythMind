@@ -84,9 +84,86 @@
         color: #000000;
         font-weight: 800;
         outline: none !important;
+      } 
+      .story-btn {
+  position:relative ;
+  display: inline-block;
+  
+  left:200px;
+  top: 2px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+        border-color: #000000;
+        cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+      
+      .story-styles {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        text-align: center;
+        color:whitesmoke;
+        position:absolute;
+        height: auto;
+        width: auto;
+        margin: 200px;
+        font-size:x-large;
+        background-color: transparent;
+        z-index: 2001;
+        /* display: "none";  */
+      
+         /* Starting position */
+ -moz-transform:translateY(100%);
+ -webkit-transform:translateY(100%);	
+ transform:translateY(100%);
+      }
+      .story{
+ /* Apply animation to this element */	
+ -moz-animation: story 25s linear infinite;
+ -webkit-animation: story 25s linear infinite;
+ animation: story 25s linear infinite;
       }
 
-      
+/* Move it (define the animation) */
+@-moz-keyframes story {
+ 0%   { -moz-transform: translateY(100%); }
+ 100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes story {
+ 0%   { -webkit-transform: translateY(100%); }
+ 100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes story {
+ 0%   { 
+ -moz-transform: translateY(100%); /* Browser bug fix */
+ -webkit-transform: translateY(100%); /* Browser bug fix */
+ transform: translateY(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(-100%); /* Browser bug fix */
+ -webkit-transform: translateY(-100%); /* Browser bug fix */
+ transform: translateY(-100%); 
+ }
+}
+.story:hover {
+ -moz-animation-play-state: paused;
+ -webkit-animation-play-state: paused;
+ animation-play-state: paused;
+ }
 
     </style>
     
@@ -97,6 +174,30 @@
                 <source src="sounds/snow_s.mp3" type="audio/mp3">
               </audio>
     <div class="snow-container" controls id="myvideo">
+      <button class="story-btn" id="storyId" onclick="toggleCheck()">Read a story</button>
+      <div class="story-styles">
+        The coffee is just hot enough when you take a gulp.
+        <br>
+        <br> The sugar, exactly right. 
+        <br><br>You think about all the paper pixies that you had draped on the walls last Christmas
+        <br> when the house was full of all your favorite people.
+        <br> You remember the big tree, all the eggnog and the syrupy sweet cake which was so tasty
+        <br> that it got finished before it could make it around the table to you. 
+        <br><br>Most of all, you miss them, your younger cousins<br> playing around and decorating the tree.
+        <br> You miss their smiles so much that it almost takes your own smile off the face. 
+        <br><br>Then, you realize that the only way to spend this
+        <br> Christmas one continent away from your family is
+        <br> by being happy for them and making new memories.
+        <br><br>Over the past few months of being stuck at home, you have gotten used
+        <br> to the feeling of being alone and it doesn’t hurt anymore-
+        <br> in fact, you have almost grown to enjoy it.
+        <br> All this you-time. 
+        <br>Slowly, you touch the carpet with your socked feet and 
+        <br>reach across the table towards the old iPod. You switch it on.
+        <br><br> As the gentle hum of ‘Silent Night’ fills up the room embracing you 
+        <br>in happy memories, your eyes fall towards the window. 
+        <br><br>It has been snowing all this time. . .
+      </div>
       <span class="snowflake"></span>
     </div>
 
@@ -114,8 +215,11 @@
           }
         }
 
+        function toggleCheck(){
+          var st=document.getElementById("storyId");
+          st.classList.add("story");
+        }
     </script>
-
 
 
 <script>
