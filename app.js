@@ -64,19 +64,19 @@ app.get("/:name",(req,res)=>{
   res.render("index.ejs",{currentUser:req.params.name,songs:search_id});
 })
 
-app.get("/snow",(req,res)=>{
+app.get("/landscape/snow",(req,res)=>{
   res.render("snow");
 })
 
-app.get("/sea",(req,res)=>{
+app.get("/landscape/sea",(req,res)=>{
   res.render("sea");
 })
 
-app.get("/rain",(req,res)=>{
+app.get("/landscape/rain",(req,res)=>{
   res.render("rain");
 })
 
-app.get("/fireflies",(req,res)=>{
+app.get("/landscape/fireflies",(req,res)=>{
   res.render("fireflies");
 })
 app.get("/",(req,res)=>{
@@ -86,7 +86,37 @@ app.get("/:name/search/:emotion",function(req,res){
 //  request.get("https://serpapi.com/playground?q=calm&tbm=isch&ijn=0",function(error,response,body){
 //    console.log(body);
 //  });
-  emotion=req.params.emotion;
+emotion=req.params.emotion;
+search_img="";
+if(emotion==="calm")
+search_img="valleys";
+else if(emotion=="sleepy")
+search_img="energetic";
+else if(emotion=="excited")
+search_img="excited";
+else if(emotion=="romantic")
+search_img="love";
+else if(emotion=="anxious")
+search_img="calm";
+else if(emotion=="depressed")
+search_img="dogs";
+else
+search_img="sunflowers";
+
+
+var option={
+  url: "https://api.pexels.com/v1/search?query="+search_img+"&per_page=12",
+  headers:{'Authorization': '563492ad6f91700001000001f3abc51728374a549bc6920d623170e3'},
+  json:true
+};
+request.get(option ,function(error, response, body){
+ var i;
+ //console for images
+  for(i=0;i<12;i++){
+    console.log(body.photos[i].src.large); //images for slideshow
+  }
+})
+ 
   var options = {  
     url:  'https://api.spotify.com/v1/search?q='+emotion+'k&type=playlist&limit=2',
     headers: { 'Authorization': 'Bearer ' + access_token },
@@ -186,7 +216,7 @@ app.get('/auth/spotify/callback', function(req, res) {
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
-          console.log(body);
+         // console.log(body);
           res.redirect("/"+body.display_name);
         // res.render("index",{currentUser:body.display_name,id:"7uIGRS1a1X4w4URdHPUdUx"})
 
