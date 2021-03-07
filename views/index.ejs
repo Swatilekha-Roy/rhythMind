@@ -99,30 +99,61 @@
 
 
 					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
-						<a href="<%=currentUser%>/search/calm/#songs"><button type="button" class="btn mood" onclick="feelAlert() >Calm</button></a>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Calm</button>
 						<% } else { %>
 						<!-- logged in code -->
 						<a href="<%=currentUser%>/search/calm/#songs"><button type="button" class="btn mood">Calm</button></a>
 					<% } %>
 
 				
-
+					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Sleepy</button>
+						<% } else { %>
+						<!-- logged in code -->
 					<a href="<%=currentUser%>/search/sleepy/#songs"><button type="button" class="btn mood">Sleepy</button></a>
-
-
+					<% } %>
+					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Gloomy</button>
+						<% } else { %>
+						<!-- logged in code -->
 					<a href="<%=currentUser%>/search/gloomy/#songs"><button type="button" class="btn mood">Gloomy</button></a>
+					<% } %>
 				</div>
 	
 				<div class="feeling-buttons2 flex col-md-9 offset-md-2 top-text">
+					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Excited</button>
+						<% } else { %>
+						<!-- logged in code -->
 					<a href="<%=currentUser%>/search/excited/#songs"><button type="button" class="btn mood">Excited</button></a>
+					<% } %>
+					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Romantic</button>
+						<% } else { %>
+						<!-- logged in code -->
 					<a href="<%=currentUser%>/search/romantic/#songs"><button type="button" class="btn mood">Romantic</button></a>
-					
+					<% } %>
 				</div>
 	
 				<div class="feeling-buttons flex col-md-9 offset-md-2 top-text">
+					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Anxious</button>
+						<% } else { %>
+						<!-- logged in code -->
 					<a href="<%=currentUser%>/search/anxious/#songs"><button type="button" class="btn mood">Anxious</button>
+						<% } %>
+						<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+							<button type="button" class="btn mood" onclick="feelAlert()" >Depressed</button>
+							<% } else { %>
+							<!-- logged in code -->
 						<a href="<%=currentUser%>/search/depressed/#songs"><button type="button" class="btn mood">Depressed</button></a>
+						<% } %>
+						<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+							<button type="button" class="btn mood" onclick="feelAlert()" >Cheerful</button>
+							<% } else { %>
+							<!-- logged in code -->
 							<a href="<%=currentUser%>/search/cheerful/#songs"><button type="button" class="btn mood">Cheerful</button></a>
+							<% } %>
 				</div>
 			</div>
     </div>
@@ -144,7 +175,13 @@
 	<iframe src="https://open.spotify.com/embed/album/<%=songs.a2%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 	<% } %>
 </div>
-
+<div id="images">
+<% if(image) { %>
+	<% for(let i=0;i<12;i++) {%>
+			<%=image[i]%>
+			<% } %>
+			<% } %>
+</div>
 
 
 

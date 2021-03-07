@@ -61,7 +61,8 @@ app.get("/:name/:s1/:s2/:a1/:a2/:p1/:p2", (req, res) => {
 });
 app.get("/:name",(req,res)=>{
   //search_id={};
-  res.render("index.ejs",{currentUser:req.params.name,songs:search_id,img:images});
+  console.log(images);
+  res.render("index.ejs",{currentUser:req.params.name,songs:search_id,image:images});
 })
 
 app.get("/landscape/snow",(req,res)=>{
@@ -80,7 +81,7 @@ app.get("/landscape/fireflies",(req,res)=>{
   res.render("fireflies");
 })
 app.get("/",(req,res)=>{
-  res.render("index",{currentUser:"",songs:""});
+  res.render("index",{currentUser:"",songs:"",image:[]});
 })
 app.get("/:name/search/:emotion",function(req,res){
 //  request.get("https://serpapi.com/playground?q=calm&tbm=isch&ijn=0",function(error,response,body){
