@@ -207,7 +207,7 @@ img { max-width: 100%; }
 .login-btn{
 	border-radius: 35px;
 	border: 1px solid #346d7e;
-	width: 120px;
+	width: 140px;
 	height: 37px;
 	font-size: 14px;
 	color: white;
@@ -219,6 +219,8 @@ img { max-width: 100%; }
 .login-btn:hover{
 	background-image: linear-gradient(#21424d,#59c4e7);
 }
+
+
 
 
 /* Meditation and Sleep */
@@ -508,6 +510,11 @@ body, html {
 .carousel-inner img{
 	height: 100vh;
 	width: auto;
+}
+
+
+#text {
+	display: none;
 }
 
 #more{
