@@ -35,7 +35,7 @@ app.use(cookieParser());
 var images=[];
 var client_id = '948e691fc2cc42b99db55a783cc5be60'; // Your client id
 var client_secret = '71109d1b8abd445c933650a38bd759db'; // Your secret
-var redirect_uri = 'http://localhost:3000/auth/spotify/callback/'; // Your redirect uri
+var redirect_uri = 'https://rhythmind.herokuapp.com/auth/spotify/callback/'; // Your redirect uri
 var generateRandomString = function(length) {
   var text = '';
   var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
