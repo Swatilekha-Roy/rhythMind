@@ -53,7 +53,84 @@ body {
         background-size: 100% 100%;
 }
 
+.story-btn {
+  position:relative ;
+  display: inline-block;
+  
+  left:210px;
+  top: 2px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+        border-color: #000000;
+        cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+      .story-styles {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        text-align: center;
+        color: gray;
+        position:absolute;
+        height: auto;
+        width: auto;
+        margin: 200px;
+        font-size:x-large;
+        background-color: transparent;
+        z-index: 2001;
+        /* display: "none";  */
+        /* Starting position */
+ -moz-transform:translateY(50%);
+ -webkit-transform:translateY(50%);	
+ transform:translateY(50%);
+        }
+        .story{
+         
+ /* Apply animation to this element */	
+ -moz-animation: story 25s linear infinite;
+ -webkit-animation: story 25s linear infinite;
+ animation: story 25s linear infinite;
+      }
 
+/* Move it (define the animation) */
+@-moz-keyframes story {
+ 0%   { -moz-transform: translateY(100%); }
+ 100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes story {
+ 0%   { -webkit-transform: translateY(100%); }
+ 100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes story {
+ 0%   { 
+ -moz-transform: translateY(100%); /* Browser bug fix */
+ -webkit-transform: translateY(100%); /* Browser bug fix */
+ transform: translateY(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(-100%); /* Browser bug fix */
+ -webkit-transform: translateY(-100%); /* Browser bug fix */
+ transform: translateY(-100%); 
+ }
+}
+.story:hover {
+ -moz-animation-play-state: paused;
+ -webkit-animation-play-state: paused;
+ animation-play-state: paused;
+ }
 
 
 @keyframes scaleUpDown {
@@ -286,6 +363,28 @@ body {
        <source src="sounds/firefly_s.mp3" type="audio/mp3">
     </audio>
     <div class="firefly-container" controls id="myvideo">
+      <button class="story-btn" onclick="toggleCheck()">Read a story</button>
+      <div class="story-styles" id="storyId">
+        Yes, this is not a story, you remind yourself yet again.
+        <br><br> This is as real and lovely and mesmerizing as it can get,
+        <br> this beautiful array of light and dark 
+        <br>hugging your screen worn eyes. 
+        <br>As you keep staring, one of the fireflies settle right on your nose and blink twice. 
+        <br><br>Light. Dark. Light. Dark.
+        <br><br> You smile to yourself, is this what heaven is supposed to feel like? 
+        <br>Only stars and endless calm. 
+        
+        <br><br>You know that it’s just for the night, 
+        <br>that you would be back in your old life in less than eight hours- 
+        <br>but the transition and regret of having to leave is what makes this night even more special. 
+        <br><br>The tranquility of being all alone under these millions of light beacons is almost humbling-
+        <br> it reminds you how you are just a simple speck of particle in this vast teeming universe. 
+        <br><br>The occasional owl hoots into the night while the fire
+        <br> burning nearby is slowly dying out, the embers hissing gently. 
+        <br><br>Your eyes are tired, they feel like closing in to the calm 
+        <br>but your heart is full awake capturing every single moment.
+      </div>
+
       <div class="fire">
         <div class="fire-left">
           <div class="main-fire"></div>
@@ -320,6 +419,11 @@ body {
           } else if (elem.msRequestFullscreen) { /* IE11 */
             elem.msRequestFullscreen();
           }
+        }
+
+        function toggleCheck(){
+          var st=document.getElementById("storyId");
+          st.classList.add("story");
         }
 
     </script>
