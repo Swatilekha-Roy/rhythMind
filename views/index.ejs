@@ -68,7 +68,13 @@
 		                </li>
 						
 						<li class="nav-item">
-		                    <a class="nav-link scroll-link"><button type="button" class="login-btn btn">Logged in as <%=currentUser%></button></a>
+		                    
+							<% if(!(currentUser !== undefined && currentUser !== '')) { %>
+								<a class="nav-link scroll-link" href="/auth/spotify"><button type="button" class="login-btn btn">Log in</button></a>
+								<% } else { %>
+								<!-- logged in code -->
+								<a class="nav-link scroll-link"><button type="button" class="login-btn btn">Logged in as <%=currentUser%></button></a>
+								<% } %>
 		                </li>
 		            </ul>
 		        </div>
