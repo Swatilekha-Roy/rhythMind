@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="/images/favicon.png">
 
     <style type="text/css">
 
@@ -257,8 +257,8 @@ body, html{
   position:relative ;
   display: inline-block;
   
-  left:200px;
-  top: 2px;
+  left:210px;
+  top: 7px;
   width: 120px;
   height: 40px;
   border-radius: 20px;
@@ -342,12 +342,12 @@ body, html{
   <body>
             <button class="rain-btn" onclick="openFullscreen();">Go  Fullscreen</button>
               <audio controls loop autoplay class="rain_sound" >
-                <source src="sounds/sea_s.mp3" type="audio/mp3">
+                <source src="/sounds/sea_s.mp3" type="audio/mp3">
               </audio>
     <div class="sea-container" controls id="myvideo">
 
-      <button class="story-btn" id="storyId" onclick="toggleCheck()">Read a story</button>
-      <div class="story-styles">
+      <button class="story-btn" onclick="toggleCheck()">Read a story</button>
+      <div class="story-styles" id="storyId">
         Sea shells on the sea shore,
         <br> you keep playing and replaying the tongue twister in your mouth
         <br> while a couple of teenagers cry delightedly before
