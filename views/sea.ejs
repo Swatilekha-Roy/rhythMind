@@ -253,6 +253,87 @@ body, html{
 	}
 }
 
+.story-btn {
+  position:relative ;
+  display: inline-block;
+  
+  left:200px;
+  top: 2px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+        border-color: #000000;
+        cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+
+
+.story-styles {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        text-align: center;
+        color:whitesmoke;
+        position:absolute;
+        height: auto;
+        width: auto;
+        margin: 200px;
+        font-size:x-large;
+        background-color: transparent;
+        z-index: 2001;
+        /* display: "none";  */
+      
+         /* Starting position */
+ -moz-transform:translateY(100%);
+ -webkit-transform:translateY(100%);	
+ transform:translateY(100%);
+      }
+      .story{
+ /* Apply animation to this element */	
+ -moz-animation: story 25s linear infinite;
+ -webkit-animation: story 25s linear infinite;
+ animation: story 25s linear infinite;
+      }
+
+/* Move it (define the animation) */
+@-moz-keyframes story {
+ 0%   { -moz-transform: translateY(100%); }
+ 100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes story {
+ 0%   { -webkit-transform: translateY(100%); }
+ 100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes story {
+ 0%   { 
+ -moz-transform: translateY(100%); /* Browser bug fix */
+ -webkit-transform: translateY(100%); /* Browser bug fix */
+ transform: translateY(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(-100%); /* Browser bug fix */
+ -webkit-transform: translateY(-100%); /* Browser bug fix */
+ transform: translateY(-100%); 
+ }
+}
+.story:hover {
+ -moz-animation-play-state: paused;
+ -webkit-animation-play-state: paused;
+ animation-play-state: paused;
+ }
+
       
 
     </style>
@@ -264,6 +345,28 @@ body, html{
                 <source src="sounds/sea_s.mp3" type="audio/mp3">
               </audio>
     <div class="sea-container" controls id="myvideo">
+
+      <button class="story-btn" id="storyId" onclick="toggleCheck()">Read a story</button>
+      <div class="story-styles">
+        Sea shells on the sea shore,
+        <br> you keep playing and replaying the tongue twister in your mouth
+        <br> while a couple of teenagers cry delightedly before
+        <br> thrusting their surfing boards into the water. 
+        <br><br> You miss your childhood days almost immediately. 
+        <br><br>The glass of lemonade in your left hand is refreshingly icy,
+        <br> your skin deliciously tan and the sun is tenderly kissing your feet. 
+        <br>The island might be small but it’s a perfect break from your busy schedule- 
+        <br>just a long, outstretched moment of rest and tranquility. 
+        <br>The palm trees bob their heads with the breeze and 
+        <br>they seem to be whispering to each other the ancient secrets of this simple beach.
+        <br> The sea is not too choppy, not too gentle- just therapeutic enough. 
+        <br>While the slight sea breeze tingles your temples, 
+        <br>you open your book to the dog eared page. 
+        <br><br>And just like that, the transportation begins- 
+        <br>you feel light, warm and your heart hasn’t been this happy for a long, long time. 
+        <br><br>And I think it knows it too.
+
+      </div>
 
 
       <div id="sun">
@@ -282,7 +385,7 @@ body, html{
       </div>
     </div>
 
-    
+
 
 
     <script type="text/javascript">
@@ -298,6 +401,11 @@ body, html{
           }
         }
 
+        function toggleCheck(){
+          var st=document.getElementById("storyId");
+          st.classList.add("story");
+        }
+        
     </script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
