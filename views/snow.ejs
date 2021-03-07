@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="/images/favicon.png">
 
     <style type="text/css">
 
@@ -46,9 +46,6 @@
         width: 10px;
         height: 10px;
       }
-
-
-
 
       .rain_sound {
         padding-top: 1%;
@@ -89,7 +86,7 @@
   position:relative ;
   display: inline-block;
   
-  left:200px;
+  left:210px;
   top: 2px;
   width: 120px;
   height: 40px;
@@ -172,10 +169,11 @@
             <button class="rain-btn" onclick="openFullscreen();">Go  Fullscreen</button>
               <audio controls loop autoplay class="rain_sound" >
                 <source src="/sounds/snow_s.mp3" type="audio/mp3">
+                  <!-- <button class="story-btn" id="storyId" onclick="toggleCheck()">Read a story</button> -->
               </audio>
     <div class="snow-container" controls id="myvideo">
-      <button class="story-btn" id="storyId" onclick="toggleCheck()">Read a story</button>
-      <div class="story-styles">
+       <button class="story-btn" onclick="toggleCheck()">Read a story</button> 
+      <div class="story-styles" id="storyId">
         The coffee is just hot enough when you take a gulp.
         <br>
         <br> The sugar, exactly right. 

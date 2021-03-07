@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="shortcut icon" href="/images/favicon.png">
 
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -387,6 +387,12 @@
         </div>
     </div>
 </div>
+
+<button id="open" class="open-button" onclick="openForm()">Chat</button>
+    <div class="chat-popup" id="myForm">
+    <iframe src='https://webchat.botframework.com/embed/Buzzz_Bot?s=c0AALM926l8.b6q7w5YGl6ZmBtRI9Xm5_BziLQsqQBQvCTe9z4YypIU'  style='border: 2px solid rgb(172, 172, 233); border-radius:10px; min-width: 350px; width: 50%; min-height: 450px; align-content: center; margin-right:100px;'></iframe>
+    <button id="open" class="open-button" onclick="openForm()">x</button>
+</div>
         <!-- Footer -->
         <footer>
 	        <div class="container">
@@ -410,7 +416,6 @@
 	        </div>
         </footer>
 
-		<iframe src='https://webchat.botframework.com/embed/Buzzz_Bot?s=c0AALM926l8.b6q7w5YGl6ZmBtRI9Xm5_BziLQsqQBQvCTe9z4YypIU'  style='min-width: 400px; width: 50%; min-height: 500px; align-content: center;'></iframe>
         <!-- Custom Javascript files -->
 		
 		<script type="text/javascript" src="js/scripts.js"></script>

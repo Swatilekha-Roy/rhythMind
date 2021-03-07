@@ -114,4 +114,16 @@ $(document).ready(function() {
 });
 
 
+//chatbot
 
+function openForm(){
+var x = document.getElementById("open");
+  if (x.innerHTML === "Chat") {
+document.getElementById("myForm").style.display = "block";
+x.innerHTML="x";
+} else if(x.innerHTML === "x") {
+    document.getElementById("myForm").style.display = "none";
+        x.innerHTML = "Chat";
+  }
+
+}
