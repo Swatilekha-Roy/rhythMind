@@ -12,6 +12,7 @@ We utilized various technologies ranging from animation tools, web development t
 
 ### Demo Links
 https://rhyth-mind.herokuapp.com
+
 https://devpost.com/software/rythmind-6pc215
 
 ## What it Does
