@@ -6,6 +6,7 @@ We utilized various technologies ranging from animation tools, web development t
 - Front end languages: HTML5, CSS3, Javascript, AJAX
 - Front end framework: Bootstrap to design the user interface (UI)
 - Backend: Node.js, Express.js
+- jQuery
 - Spotify API: To fetch and manage the relevant catalogs about artists, tracks and playlists  
 - Pexels API: To fetch images corresponding to the emotions displayed on our web app presently 
 - Microsoft Azure: To create a conversational, friendly echo chatbot for rythMind which engages in a friendly conversation with the user helping him/her/them talk about his emotions and guiding them towards a calming experience by suggesting relevant songs, playlists, meditation or breathing exercise.
