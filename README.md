@@ -23,6 +23,7 @@ It provides a well earned respite and relief to the tired mind and soul through 
 There are endless possibilities for ‘rythMind’ in terms of additional features and creativity. 
 - Enabling the opportunity to share blog posts by users about their personal experiences with stress, anxiety or any mental health issue and how music helped them get through it. 
 - Support groups and music therapy sessions can be incorporated. 
-- Augmented reality meditation workshops for our users.
+- Making a listening room for people listening in live, and song bots like are popular in Discord servers.
+- VR meditation workshops for our users.
 - Getting rid of the minor bugs and glitches and developing the app further in terms of UX.
 - Training our bot further for more personalized conversations.
