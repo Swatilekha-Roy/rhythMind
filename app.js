@@ -113,6 +113,7 @@ var option={
 request.get(option ,function(error, response, body){
  var i;
  //console for images
+ images=[];
   for(i=0;i<12;i++){
     images.push(body.photos[i].src.large);
     console.log(body.photos[i].src.large); //images for slideshow
