@@ -359,24 +359,7 @@ footer {
 
 /* newsletter */
 
-  
-#subsFrm input{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	border-radius: 10px;
-	width: 300px;
-	height: 35px;
-	border-color: transparent;
-}
 
-#subsFrm button{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	/* border-radius: 10px; */
-	/* width: 300px; */
-	/* height: 35px; */
-	border-color: transparent;
-}
 
 
 .footer-right {
@@ -391,6 +374,8 @@ footer {
 .footer-right a:hover, .footer-right a:focus { color:#dfe9ec; }
 
 .footer-bottom {
+	margin-top: 10%;
+	margin-left: 5%;
 	padding-bottom: 25px;
 	text-align: center;
 }
@@ -403,7 +388,13 @@ footer {
 
 .footer-bottom a:hover, .footer-bottom a:focus { color:#dfe9ec; }
 
-@media only screen and (max-width: 767px​){ .responsive.html_header_sidebar #top { position: relative; } }
+@media only screen and (max-width: 767px​){ 
+	.responsive.html_header_sidebar #top { position: relative; }
+	
+}
+
+
+
 
 
 
