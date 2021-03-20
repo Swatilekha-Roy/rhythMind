@@ -692,3 +692,26 @@ background-size: cover;
 	/*border-color: transparent;
 }
 */
+
+
+/* AR Experience */
+.hover-animation {
+	position: relative;
+	height: 200px;
+	width: 300px;
+	margin: 10% auto 0;
+	color: #ffffff;
+}
+
+.hover-animation img {
+	position: absolute;
+	left: 0;
+	width: 300px;
+	height: 260px;
+	transition: opacity 1s ease-in-out;
+}
+
+.hover-animation img.img-front:hover {
+	opacity: 0;
+	cursor: pointer;
+}
