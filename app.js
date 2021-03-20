@@ -2,10 +2,13 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 var querystring = require('querystring');
+const http = require('http');
+const path = require('path');
 var request = require('request'); // "Request" library
 var cookieParser = require('cookie-parser');
 const ejs = require("ejs");
 const passport = require('passport');
+const formatMessage = require('./utils/messages');
 const axios=require("axios");
 // require('./passport');
 // const isLoggedIn = require('./Middleware/auth')
@@ -13,6 +16,12 @@ const cookieSession = require('cookie-session')
 let port = process.env.PORT || 3000
 const app = express();
 app.use(passport.initialize());
+const server = http.createServer(app);
+
+const socketio = require('socket.io');
+
+// app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(passport.session());
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -27,10 +36,76 @@ var search_id={};
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+// listening room
+
+const {
+  userJoin,
+  getCurrentUser,
+  userLeave,
+  getRoomUsers
+} = require('./utils/users');
+
+const io = socketio(server);
+const botName = 'ChatCord Bot';
+// Run when client connects
+io.on('connection', socket => {
+  // console.log("cconnected");
+  socket.on('joinRoom', ({ username, room }) => {
+    const user = userJoin(socket.id, username, room);
+
+    socket.join(user.room);
+
+    // Welcome current user
+    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+
+    // Broadcast when a user connects
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        'message',
+        formatMessage(botName, `${user.username} has joined the chat`)
+      );
+
+    // Send users and room info
+    io.to(user.room).emit('roomUsers', {
+      room: user.room,
+      users: getRoomUsers(user.room)
+    });
+  });
+
+  // Listen for chatMessage
+  socket.on('chatMessage', msg => {
+    const user = getCurrentUser(socket.id);
+
+    io.to(user.room).emit('message', formatMessage(user.username, msg));
+  });
+
+  // Runs when client disconnects
+  socket.on('disconnect', () => {
+    const user = userLeave(socket.id);
+
+    if (user) {
+      io.to(user.room).emit(
+        'message',
+        formatMessage(botName, `${user.username} has left the chat`)
+      );
+
+      // Send users and room info
+      io.to(user.room).emit('roomUsers', {
+        room: user.room,
+        users: getRoomUsers(user.room)
+      });
+    }
+  });
+});
+
+
 app.use(cookieSession({
   name: 'spotify-auth-session',  
   keys: ['key1', 'key2']
 }))
+
 app.use(cookieParser());
 var images=[];
 var client_id = '948e691fc2cc42b99db55a783cc5be60'; // Your client id
@@ -80,6 +155,7 @@ app.get("/landscape/rain",(req,res)=>{
 app.get("/landscape/fireflies",(req,res)=>{
   res.render("fireflies");
 })
+
 app.get("/",(req,res)=>{
   res.render("index",{currentUser:"",songs:"",image:[]});
 })
