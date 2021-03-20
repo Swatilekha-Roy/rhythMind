@@ -88,6 +88,19 @@ img { max-width: 100%; }
    border: 1px solid rgb(107, 107, 107);
 }
 
+@media only screen and (max-width:600px)
+{
+	.mood {
+		width: 100px;
+		margin-left: 1%;
+	}
+
+	.feeling-buttons2 {
+		align-items: center;
+		margin-left: 3rem;
+	}
+}
+
 .mood:hover,.mood:active,.mood:focus {
 	background-color: #346d7e;
 	color: #ffffff;
@@ -104,7 +117,7 @@ img { max-width: 100%; }
 	  }
 
 	  .feeling p{
-		  font-size: 27px;
+		  font-size: 26px;
 	  }
 }
 
@@ -165,10 +178,16 @@ img { max-width: 100%; }
 .navbar-dark .navbar-nav { font-size: 15px; color: #ffffff; font-weight: 600; }
 .navbar-dark .navbar-nav .nav-link { color: #ffffff; border: 0; }
 .navbar-dark .navbar-nav .nav-link:hover { color: #dfe9ec; }
-.navbar-dark .navbar-nav .nav-link:focus { color: #dfe9ec; outline: 1; }
+.navbar-dark .navbar-nav .nav-link:focus { color: #dfe9ec; outline: 1rem; }
 
 .navbar-expand-md .navbar-nav .nav-link { padding-left: 1rem; padding-right: 0.5rem; }
 
+
+/* Pexels carousel */
+.pexels-carousel {
+	margin-top: 5%;
+	
+}
 
 
 /* Top Content */
@@ -246,6 +265,13 @@ img { max-width: 100%; }
 	margin-left: 2%;
 	transform: skew(0, 5deg);
 	margin-right: 5%;
+}
+
+@media only screen and (max-width:768px)
+{
+	.sleep-text h3 {
+		margin-top: 25%;
+	}
 }
 
 
@@ -445,6 +471,20 @@ body, html {
 	height: 60vh;
   }
 
+  
+@media screen and (max-width: 480px){
+  .glass p{
+	  font-size: 35px;
+	  font-weight: 700;
+  }
+
+  .landscape p{
+	font-size: 35px;
+	font-weight: 700;
+}
+}
+
+
   @-webkit-keyframes eye-focus {
 	0% {
 	  -webkit-filter: blur(0);
@@ -461,19 +501,21 @@ body, html {
 	  transform: scale(1.01)
 	}
   }
+
+
   .landscape {
 	background: url("../images/scenery.jpg");
 	background-size: cover;
 	background-position: center;
 	filter: blur(1em);
-	animation: eye-focus 3s ease-in infinite alternate, 
-	  focus-shift 3s ease-in infinite alternate;
+	animation: eye-focus 4s ease-in infinite alternate, 
+	  focus-shift 4s ease-in infinite alternate;
   }
   .glass {
 	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/54046/glass_droplets.jpeg);
 	filter: blur(0);
-	animation: eye-focus 3s ease-in infinite 3s alternate, 
-	  focus-shift 3s ease-in infinite alternate;
+	animation: eye-focus 4s ease-in infinite 4s alternate, 
+	  focus-shift 4s ease-in infinite alternate;
 	opacity: 0.5;
   }
 
@@ -513,10 +555,15 @@ body, html {
    
 
 .carousel-inner img{
-	height: 100vh;
+	height: 97vh;
 	width: auto;
 }
 
+
+#text {
+	margin-top: 8%;
+	margin-bottom: 15%;
+}
 
 .carousel-caption {
 	font-weight: 500;
@@ -534,15 +581,24 @@ body, html {
 	background-color: rgba(228, 225, 225, 0.233);
 	margin-left: 20%;
   }
-  
-  
-  .btnPush:hover {
+
+
+.btnPush:hover {
 	margin-top: 15px;
 	margin-bottom: 5px;
 	font-size: 1.1rem;
 	color: #ffffff;
 	background-color: rgba(132, 187, 236, 0.521);
   }
+
+  @media only screen and (max-width: 400px)
+  {
+	.btnPush {
+		margin-left: 2%;
+	}
+  }
+
+
 
   /* chatbot */
 
@@ -569,6 +625,10 @@ body, html {
 	-webkit-animation-duration: 0.4s;
 	z-index: 9;
   }
+
+  .chat-popup:hover,.chat-popup:active {
+	  outline: none;
+  }
   
   .open-button{
   border-radius: 500px;
@@ -577,6 +637,18 @@ body, html {
   background-image: url("../images/mickey.png");
 background-size: cover;
   }
+
+  .open-button:active {
+	  outline: none;
+	  border: none;
+  }
+  @media screen and (max-width: 468px){
+    .chat-popup iframe{
+		width: 200px;
+		height: 400px;
+	}
+  }
+
   
   @-webkit-keyframes slideIn {
 	from {bottom: -300px; opacity: 0} 
@@ -598,5 +670,24 @@ background-size: cover;
 	to {opacity: 1}
   }
   
+
+/* newsletter */
+
   
-  
+#subsFrm input{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	width: 300px;
+	height: 35px;
+	border-color: transparent;
+}
+
+#subsFrm button{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/* border-radius: 10px; */
+	/* width: 300px; */
+	/* height: 35px; */
+	border-color: transparent;
+}
