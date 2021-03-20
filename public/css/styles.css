@@ -749,6 +749,7 @@ background-size: cover;
     height: 80px;
     border: none;
     outline: none;
+	font-size: 1.2rem;
     color: #fff;
     background: #346d7e;
     cursor: pointer;
@@ -768,6 +769,7 @@ background-size: cover;
     filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
+	font-weight: 600;
     animation: glowing 20s linear infinite;
     opacity: 0;
     transition: opacity .3s ease-in-out;
@@ -775,11 +777,13 @@ background-size: cover;
 }
 
 .glow-on-hover:active {
-    color: #346d7e
+    color: #346d7e;
+	font-weight: 600;
 }
 
 .glow-on-hover:active:after {
     background: transparent;
+	font-weight: 600;
 }
 
 .glow-on-hover:hover:before {
@@ -795,6 +799,7 @@ background-size: cover;
     background: #346d7e;
     left: 0;
     top: 0;
+	font-weight: 600;
     border-radius: 10px;
 }
 
