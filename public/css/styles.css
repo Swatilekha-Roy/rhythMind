@@ -357,12 +357,34 @@ footer {
 	text-align: left;
 }
 
+/* newsletter */
+
+  
+#subsFrm input{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	width: 300px;
+	height: 35px;
+	border-color: transparent;
+}
+
+#subsFrm button{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/* border-radius: 10px; */
+	/* width: 300px; */
+	/* height: 35px; */
+	border-color: transparent;
+}
+
+
 .footer-right {
 	text-align: right;
 }
 
 .footer-right a {
-	margin: 10% 9px;
+	margin: 7% 9px auto 0;
     font-size: 32px;
     color: #ffffff;
 }
@@ -382,6 +404,8 @@ footer {
 .footer-bottom a:hover, .footer-bottom a:focus { color:#dfe9ec; }
 
 @media only screen and (max-width: 767px​){ .responsive.html_header_sidebar #top { position: relative; } }
+
+
 
 body, html {
     overflow-x: hidden; }
@@ -671,27 +695,7 @@ background-size: cover;
   }
   
 
-/* newsletter 
 
-  
-#subsFrm input{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	border-radius: 10px;
-	width: 300px;
-	height: 35px;
-	border-color: transparent;
-}
-
-#subsFrm button{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	/* border-radius: 10px; */
-	/* width: 300px; */
-	/* height: 35px; */
-	/*border-color: transparent;
-}
-*/
 
 
 /* AR Experience */
