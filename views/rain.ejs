@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>Forest</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,11 +23,10 @@
       background-attachment: fixed;
     }
 
-            .rain-container {
-              background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/images/rain_bg.jpg);
+        .rain-container {
+        background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/images/rain_bg.jpg);
         padding: 0;
         margin: 0;
-        /*height: 87vh;*/
         height: 100%;
         width: 100%;
         
@@ -43,6 +43,7 @@
         padding: 0;
         margin: 0;
         animation: rain 0.4s linear infinite;
+        position: fixed;
       }
 
       .rain-container:before {
@@ -52,12 +53,10 @@
         width: 100%;
         height: 100vh;
         background: #ffffff8a;
-        animation: lighting 4s linear infinite;
+        /* animation: lighting 4s linear infinite; */
         opacity: 0;
         padding: 0;
       }
-
-
 
       @keyframes rain {
         0% {
@@ -69,8 +68,7 @@
       }
 
 
-
-      @keyframes lighting {
+      /* @keyframes lighting {
         0% {
           opacity: 0;
         }
@@ -95,13 +93,14 @@
         104% {
           opacity: 0;
         }
-      }
+      } */
 
       
       .rain_sound {
+        position: relative;
         padding-top: 1%;
         float: right;
-        z-index: 1000;
+        z-index: 3000;
         outline: none;
         margin-bottom: 10px;
         margin-right: 5%;
@@ -134,58 +133,29 @@
         outline: none !important;
       }
 
-      .story-btn {
-  position:relative ;
-  display: inline-block;
-  
-  left:210px;
-  top: 2px;
-  width: 120px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #ffffff3b;
-        border-color: #000000;
-        cursor: pointer;
-  border:double;
-  color: black;
-  font-family: 'DotGothic16', sans-serif;
-  font-weight:600;
-  
-}
-.story-btn:hover,.rain-btn:active,.rain-btn:focus {
-        background-color: #ffffff8a !important;
-        border-color: #000000;
-        color: #000000;
-        font-weight: 800;
-        outline: none !important;
-        font-weight:600;
-      }
-
       .story-styles {
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-style: italic;
-        text-align: center;
-        color: gray;
-        /*position: absolute;*/
+        text-align:center;
+        color:lightgray;
+         position:absolute;  
         height: auto;
-        max-width: 1000px;
-        margin: auto;
+        width: auto;
+        margin: 250px;
         font-size:x-large;
         background-color: transparent;
-        z-index: 3;
-        display: "none";
-        
+        z-index: 1001; 
          /* Starting position */
- -moz-transform:translateY(110%);
- -webkit-transform:translateY(110%);	
- transform:translateY(110%);
+ -moz-transform:translateY(100%);
+ -webkit-transform:translateY(100%);	
+ transform:translateY(100%);
       }
-      .story{
 
+      .story{
  /* Apply animation to this element */	
- -moz-animation: story 25s linear infinite;
- -webkit-animation: story 25s linear infinite;
- animation: story 25s linear infinite;
+ -moz-animation: story 25s linear 1;
+ -webkit-animation: story 25s linear 1;
+ animation: story 25s linear 1;
       }
 
 /* Move it (define the animation) */
@@ -204,9 +174,9 @@
  transform: translateY(100%); 		
  }
  100% { 
- -moz-transform: translateY(-100%); /* Browser bug fix */
- -webkit-transform: translateY(-100%); /* Browser bug fix */
- transform: translateY(-100%); 
+ -moz-transform: translateY(-400%); /* Browser bug fix */
+ -webkit-transform: translateY(-400%); /* Browser bug fix */
+ transform: translateY(-400%); 
  }
 }
 .story:hover {
@@ -214,6 +184,67 @@
  -webkit-animation-play-state: paused;
  animation-play-state: paused;
  }
+
+ .story-btn {
+  position:absolute ;
+  display: inline-block;
+  z-index: 1002;
+  left:220px;
+  top: 8px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+  border-color: #000000;
+  cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  outline: none;
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+
+
+@media screen and (max-width:700px)
+ {
+   .rain-btn {
+     visibility: hidden;
+   }
+
+   .story-btn {
+     display: block;
+     margin-top: 20%;
+   }
+
+   .rain-container {
+      background: none;
+   }
+
+   .story-styles {
+     margin: 3%;
+     font-size: 0.8rem;
+     -moz-transform:translateY(140%);
+      -webkit-transform:translateY(140%);	
+      transform:translateY(140%);
+   }
+
+   .story{
+ /* Apply animation to this element */	
+ -moz-animation: story 10s linear 1;
+ -webkit-animation: story 25s linear 1;
+ animation: story 50s linear 1;
+      }
+
+ }
+
 
     </style>
     
@@ -225,26 +256,31 @@
               </audio>
     <div class="rain-container" controls id="myvideo">
  
-      <div class="rain">      
-        <button class="story-btn" onclick="toggleCheck()">Read a story</button>
+      <div class="rain">          
+      </div>
+      <button class="story-btn">Read a story</button>
       <div class="story-styles" id="storyId">
-          The gentle spray that touches your face is refreshing, to say the least.
-          <br> A break from your monotonous nine to five cycle and an escape into the wilderness-
-          <br> the sudden plan was not a mistake after all.
-          <br><br>Back here sitting in this simple habitat of the gypsies and munching on roasted peanuts,
-          <br> you realize that life is so much simpler than it sometimes reveals itself to be. 
-          <br><br>Just like the clearing of the forest where your hut has been set down on,
-          <br> there is also a clearing in your own life.
-          <br>And you get there the same way you got here, by following your instinct and the map.
-          <br> Right through the woods, never past it.
-          <br><br>The rain washing down all the dirt of the past while you mourn the gone makes you feel 
-          <br>lighter than you have been in a while.
-          <br> Someday soon, you know, you will have moved on from what has held you back. 
-          <br><br>As you follow the trail of your thoughts freely,
-          <br> the hundreds of forest sounds all muffled together like a nightly jazz
-          <br> almost makes you wonder why you would ever go back home.
-          <br><br><br>‘But you know why’, your heart whispers.
-        </div>     
+        The gentle spray that touches your face is refreshing, to say the least.
+        <br> A break from your monotonous nine to five cycle 
+        <br>and an escape into the wilderness-
+        <br> the sudden plan was not a mistake after all.
+        <br><br>Back here sitting in this simple habitat of the 
+        <br>gypsies and munching on roasted peanuts,
+        <br> you realize that life is so much simpler than it sometimes reveals itself to be. 
+        <br><br>Just like the clearing of the forest where your hut has been set down on,
+        <br> there is also a clearing in your own life.
+        <br>And you get there the same way you got here, 
+        <br>by following your instinct and the map.
+        <br> Right through the woods, never past it.
+        <br><br>The rain washing down all the dirt of the past
+        <br> while you mourn the gone makes you feel 
+        <br>lighter than you have been in a while.
+        <br> Someday soon, you know, you will have moved on from what has held you back. 
+        <br><br>As you follow the trail of your thoughts freely,
+        <br> the hundreds of forest sounds all muffled together 
+        <br>like a nightly jazz almost makes you wonder
+        <br> why you would ever go back home.
+        <br><br><br>‘But you know why’, your heart whispers.
       </div>
     </div>
 
@@ -261,11 +297,47 @@
             elem.msRequestFullscreen();
           }
         }
+      </script>
 
-        function toggleCheck(){
-          var st=document.getElementById("storyId");
-          st.classList.add("story");
-        }
+<script> 
+        // function toggleCheck(){
+        //   var playing = false;
+        //   var st=document.getElementById("storyId");
+        //   if( !playing ){
+        //     //var st=document.getElementById("storyId");
+        //     playing=true;  
+        //   st.classList.add("story");
+        //   this.innerText = 'Quit Story';
+        //   }
+        //   else{
+        //     //var st=document.getElementById("storyId");
+        //   st.classList.remove("story");
+        //   playing=false;
+        //   }
+        // }
+       
+       var button = document.querySelector(".story-btn");
+        var playing = false;
+        var st=document.getElementById("storyId");
+button.addEventListener ("click", function (){
+    if ( !playing ) { // If not playing
+        
+        st.classList.add("story");
+
+        // `this` refers to `button`
+        // `innerText` refers to text content in `button`
+        this.innerText = 'Quit Story'; 
+        playing = true;
+    } else {
+        
+        st.classList.remove("story");
+        
+        this.innerText = 'Read a Story';
+        playing = false;
+    }
+});
+        
+
 
     </script>
 
