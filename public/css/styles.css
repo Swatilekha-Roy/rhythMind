@@ -698,6 +698,7 @@ background-size: cover;
 .hover-animation {
 	position: relative;
 	height: 200px;
+	border-radius: 1rem;
 	width: 300px;
 	margin: 10% auto 0;
 	color: #ffffff;
@@ -708,10 +709,29 @@ background-size: cover;
 	left: 0;
 	width: 300px;
 	height: 260px;
+	border-radius: 1rem;
 	transition: opacity 1s ease-in-out;
 }
 
 .hover-animation img.img-front:hover {
 	opacity: 0;
 	cursor: pointer;
+}
+
+.ar:nth-child(2) {
+	margin-left: 7%;
+}
+
+.ar-container {
+	margin-bottom: 10%;
+}
+
+@media only screen and (max-width:750px)
+{
+	.ar:nth-child(2) {
+		margin-left: 0;
+		margin-top: 15%;
+		
+	}
+	
 }
