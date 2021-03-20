@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Sea</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Forest</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
@@ -15,41 +16,94 @@
     body {
       overflow-y: hidden;
       overflow-x: hidden;
-      background:url(/images/sea_bg.jpg);
+      background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/images/rain_bg.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       height: 100vh;
-      width: 100%;
       background-attachment: fixed;
-      margin: 0;
-
     }
 
-    .sea-container {
-              background:url(/images/sea_bg.jpg);
+        .rain-container {
+        background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/images/rain_bg.jpg);
         padding: 0;
         margin: 0;
-
         height: 100%;
         width: 100%;
         
         background-repeat: no-repeat;
-
+        /*margin: 2% 5% auto 5%;*/
         background-size: 100% 100%;
       }
  
+      .rain {
+        height: 100vh;
+        width: 100vw;
+        background: url(/images/rain.png);
+        z-index: 2;       
+        padding: 0;
+        margin: 0;
+        animation: rain 0.4s linear infinite;
+        position: fixed;
+      }
+
+      .rain-container:before {
+        margin: 0;
+        padding: 0;
+        content: '';
+        width: 100%;
+        height: 100vh;
+        background: #ffffff8a;
+        /* animation: lighting 4s linear infinite; */
+        opacity: 0;
+        padding: 0;
+      }
+
+      @keyframes rain {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 5% 100%;
+        }
+      }
 
 
+      /* @keyframes lighting {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 0;
+        }
+        11% {
+          opacity: 1;
+        }
+        14% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0;
+        }
+        21% {
+          opacity: 1;
+        }
+        24% {
+          opacity: 0;
+        }
+        104% {
+          opacity: 0;
+        }
+      } */
 
-    .rain_sound {
+      
+      .rain_sound {
+        position: relative;
         padding-top: 1%;
         float: right;
-        z-index: 1000;
-        position: absolute;
-        margin-left: 72%;
-        margin-top: 8px;
+        z-index: 3000;
         outline: none;
         margin-bottom: 10px;
+        margin-right: 5%;
       }
 
       .rain-sound:hover,.rain-sound:active,.rain-sound:focus {
@@ -59,7 +113,6 @@
 
       .rain-btn {
         border-radius: 2rem;
-        margin-top: 7px;
         margin-left: 5%;
         padding: 0.5rem 1rem 0.5rem 1rem;
         font-family: 'DotGothic16', sans-serif;
@@ -80,231 +133,29 @@
         outline: none !important;
       }
 
-
-.wave {
- 
-  left:0;
-  right:0;
-  top:0;
-  position: absolute;
-  bottom:0;
-  z-index: 2;
-}
-
-.wave + .wave + .wave{
-  z-index: 2;
-}
-
-
-
-body, html{
-	height: 100%;
-}
-
-/* code for the sun  */
-#sun{
-	position: absolute;
-	top: 45%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width: 180px;
-	height: 180px;
-}
-#sun *, #sun *:before, #sun *:after{
-	position: absolute;
-}
-
-/* code for the rings */
-#rings{
-	top: 1%;
-	left: 50%;
-	z-index: 1;
-}
-#rings div:before, #rings div:after{
-	content: "";
-	z-index: 2;
-	top: 0;
-	left: 0;
-	height: inherit;
-	width: inherit;
-	background: inherit;
-}
-#rings div:before{
-	transform: rotate(60deg);
-}
-#rings div:after{
-	transform: rotate(-60deg);
-}
-#rings div:nth-child(even){
-	animation: rotateR 12s infinite linear;
-}
-#rings div:nth-child(odd){
-	animation: rotateL 12s infinite linear;
-	transform: rotate(15deg);
-}
-#rings div:nth-child(1){
-	animation-duration: 45s;
-	background: rgba(255, 230, 84, 0.5);
-	width: 130px;
-	height: 130px;
-	margin: -100px 0 0 -100px;
-}
-#rings div:nth-child(2){
-	animation-duration: 49s;
-	background: rgba(255, 185, 6, 0.5);
-	width: 120px;
-	height: 120px;
-	margin: -95px 0 0 -95px;
-}
-#rings div:nth-child(3){
-	animation-duration: 56s;
-	background: rgba(255, 130, 5, 0.5);
-	width: 110px;
-	height: 110px;
-	margin: -90px 0 0 -90px;
-}
-#ringsv idiv:nth-child(4){
-	animation-duration: 93s;
-	background: rgba(255, 90, 0, 0.5);
-	width: 100px;
-	height: 100px;
-	margin: -85px 0 0 -85px;
-}
-
-/* animations */
-@-webkit-keyframes rotateR{
-	from{
-		-webkit-transform: rotate(0deg);
-	}
-	to{
-		-webkit-transform: rotate(360deg);
-	}
-}
-@-moz-keyframes rotateR{
-	from{
-		-moz-transform: rotate(0deg);
-	}
-	to{
-		-moz-transform: rotate(360deg);
-	}
-}
-@-ms-keyframes rotateR{
-	from{
-		-ms-transform: rotate(0deg);
-	}
-	to{
-		-ms-transform: rotate(360deg);
-	}
-}
-@-o-keyframes rotateR{
-	from{
-		-o-transform: rotate(0deg);
-	}
-	to{
-		-o-transform: rotate(360deg);
-	}
-}
-@keyframes rotateR{
-	from{
-		transform: rotate(0deg);
-	}
-	to{
-		transform: rotate(360deg);
-	}
-}
-@-webkit-keyframes rotateL{
-	from{
-		-webkit-transform: rotate(360deg);
-	}
-	to{
-		-webkit-transform: rotate(0deg);
-	}
-}
-@-moz-keyframes rotateL{
-	from{
-		-moz-transform: rotate(360deg);
-	}
-	to{
-		-webkit-transform: rotate(0deg);
-	}
-}
-@-ms-keyframes rotateL{
-	from{
-		-ms-transform: rotate(360deg);
-	}
-	to{
-		-ms-transform: rotate(0deg);
-	}
-}
-@-o-keyframes rotateL{
-	from{
-		-o-transform: rotate(360deg);
-	}
-	to{
-		-o-transform: rotate(0deg)
-	}
-}
-@keyframes rotateL{
-	from{
-		transform: rotate(360deg);
-	}
-	to{
-		transform: rotate(0deg);
-	}
-}
-
-.story-btn {
-  position:relative ;
-  display: inline-block;
-  
-  left:210px;
-  top: 7px;
-  width: 120px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #ffffff3b;
-        border-color: #000000;
-        cursor: pointer;
-  border:double;
-  color: black;
-  font-family: 'DotGothic16', sans-serif;
-  font-weight:600;
-  
-}
-.story-btn:hover,.rain-btn:active,.rain-btn:focus {
-        background-color: #ffffff8a !important;
-        border-color: #000000;
-        color: #000000;
-        font-weight: 800;
-        outline: none !important;
-        font-weight:600;
-      }
-
-
-.story-styles {
+      .story-styles {
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-style: italic;
-        text-align: center;
-        color:whitesmoke;
-        position:absolute;
+        text-align:center;
+        color:lightgray;
+         position:absolute;  
         height: auto;
         width: auto;
-        margin: 200px;
+        margin: 250px;
         font-size:x-large;
         background-color: transparent;
-        z-index: 2001;
-        /* display: "none";  */
-      
+        z-index: 1001; 
          /* Starting position */
  -moz-transform:translateY(100%);
  -webkit-transform:translateY(100%);	
  transform:translateY(100%);
       }
+
       .story{
  /* Apply animation to this element */	
- -moz-animation: story 25s linear infinite;
- -webkit-animation: story 25s linear infinite;
- animation: story 25s linear infinite;
+ -moz-animation: story 25s linear 1;
+ -webkit-animation: story 25s linear 1;
+ animation: story 25s linear 1;
       }
 
 /* Move it (define the animation) */
@@ -323,9 +174,9 @@ body, html{
  transform: translateY(100%); 		
  }
  100% { 
- -moz-transform: translateY(-100%); /* Browser bug fix */
- -webkit-transform: translateY(-100%); /* Browser bug fix */
- transform: translateY(-100%); 
+ -moz-transform: translateY(-400%); /* Browser bug fix */
+ -webkit-transform: translateY(-400%); /* Browser bug fix */
+ transform: translateY(-400%); 
  }
 }
 .story:hover {
@@ -334,7 +185,66 @@ body, html{
  animation-play-state: paused;
  }
 
-      
+ .story-btn {
+  position:absolute ;
+  display: inline-block;
+  z-index: 1002;
+  left:220px;
+  top: 8px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+  border-color: #000000;
+  cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  outline: none;
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+
+
+@media screen and (max-width:700px)
+ {
+   .rain-btn {
+     visibility: hidden;
+   }
+
+   .story-btn {
+     display: block;
+     margin-top: 20%;
+   }
+
+   .rain-container {
+      background: none;
+   }
+
+   .story-styles {
+     margin: 3%;
+     font-size: 0.8rem;
+     -moz-transform:translateY(140%);
+      -webkit-transform:translateY(140%);	
+      transform:translateY(140%);
+   }
+
+   .story{
+ /* Apply animation to this element */	
+ -moz-animation: story 10s linear 1;
+ -webkit-animation: story 25s linear 1;
+ animation: story 50s linear 1;
+      }
+
+ }
+
 
     </style>
     
@@ -342,50 +252,37 @@ body, html{
   <body>
             <button class="rain-btn" onclick="openFullscreen();">Go  Fullscreen</button>
               <audio controls loop autoplay class="rain_sound" >
-                <source src="/sounds/sea_s.mp3" type="audio/mp3">
+                <source src="/sounds/rain_s.mp3" type="audio/mp3">
               </audio>
-    <div class="sea-container" controls id="myvideo">
-
-      <button class="story-btn" onclick="toggleCheck()">Read a story</button>
+    <div class="rain-container" controls id="myvideo">
+ 
+      <div class="rain">          
+      </div>
+      <button class="story-btn">Read a story</button>
       <div class="story-styles" id="storyId">
-        Sea shells on the sea shore,
-        <br> you keep playing and replaying the tongue twister in your mouth
-        <br> while a couple of teenagers cry delightedly before
-        <br> thrusting their surfing boards into the water. 
-        <br><br> You miss your childhood days almost immediately. 
-        <br><br>The glass of lemonade in your left hand is refreshingly icy,
-        <br> your skin deliciously tan and the sun is tenderly kissing your feet. 
-        <br>The island might be small but it’s a perfect break from your busy schedule- 
-        <br>just a long, outstretched moment of rest and tranquility. 
-        <br>The palm trees bob their heads with the breeze and 
-        <br>they seem to be whispering to each other the ancient secrets of this simple beach.
-        <br> The sea is not too choppy, not too gentle- just therapeutic enough. 
-        <br>While the slight sea breeze tingles your temples, 
-        <br>you open your book to the dog eared page. 
-        <br><br>And just like that, the transportation begins- 
-        <br>you feel light, warm and your heart hasn’t been this happy for a long, long time. 
-        <br><br>And I think it knows it too.
-
-      </div>
-
-
-      <div id="sun">
-        <div id="rings">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-
-      <div class="sea">      
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave" d=""/></svg>
-
-        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave"><defs></defs><path id="feel-the-wave-two" d=""/></svg>
+        The gentle spray that touches your face is refreshing, to say the least.
+        <br> A break from your monotonous nine to five cycle 
+        <br>and an escape into the wilderness-
+        <br> the sudden plan was not a mistake after all.
+        <br><br>Back here sitting in this simple habitat of the 
+        <br>gypsies and munching on roasted peanuts,
+        <br> you realize that life is so much simpler than it sometimes reveals itself to be. 
+        <br><br>Just like the clearing of the forest where your hut has been set down on,
+        <br> there is also a clearing in your own life.
+        <br>And you get there the same way you got here, 
+        <br>by following your instinct and the map.
+        <br> Right through the woods, never past it.
+        <br><br>The rain washing down all the dirt of the past
+        <br> while you mourn the gone makes you feel 
+        <br>lighter than you have been in a while.
+        <br> Someday soon, you know, you will have moved on from what has held you back. 
+        <br><br>As you follow the trail of your thoughts freely,
+        <br> the hundreds of forest sounds all muffled together 
+        <br>like a nightly jazz almost makes you wonder
+        <br> why you would ever go back home.
+        <br><br><br>‘But you know why’, your heart whispers.
       </div>
     </div>
-
-
 
 
     <script type="text/javascript">
@@ -400,46 +297,391 @@ body, html{
             elem.msRequestFullscreen();
           }
         }
+      </script>
 
-        function toggleCheck(){
-          var st=document.getElementById("storyId");
-          st.classList.add("story");
-        }
+<script> 
+        // function toggleCheck(){
+        //   var playing = false;
+        //   var st=document.getElementById("storyId");
+        //   if( !playing ){
+        //     //var st=document.getElementById("storyId");
+        //     playing=true;  
+        //   st.classList.add("story");
+        //   this.innerText = 'Quit Story';
+        //   }
+        //   else{
+        //     //var st=document.getElementById("storyId");
+        //   st.classList.remove("story");
+        //   playing=false;
+        //   }
+        // }
+       
+       var button = document.querySelector(".story-btn");
+        var playing = false;
+        var st=document.getElementById("storyId");
+button.addEventListener ("click", function (){
+    if ( !playing ) { // If not playing
         
+        st.classList.add("story");
+
+        // `this` refers to `button`
+        // `innerText` refers to text content in `button`
+        this.innerText = 'Quit Story'; 
+        playing = true;
+    } else {
+        
+        st.classList.remove("story");
+        
+        this.innerText = 'Read a Story';
+        playing = false;
+    }
+});
+        
+
+
     </script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/peacepostman/wavify/master/wavify.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Forest</title>
 
-    <script>
-     var wave1 = $('#feel-the-wave').wavify({
-  height: 250,
-  bones: 4,
-  amplitude: 60,
-  color: 'rgb(0, 191, 255)',
-  speed: .15
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/favicon.png">
+
+    <style type="text/css">
+
+    body {
+      overflow-y: hidden;
+      overflow-x: hidden;
+      background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/images/rain_bg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      background-attachment: fixed;
+    }
+
+        .rain-container {
+        background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/images/rain_bg.jpg);
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        
+        background-repeat: no-repeat;
+        /*margin: 2% 5% auto 5%;*/
+        background-size: 100% 100%;
+      }
+ 
+      .rain {
+        height: 100vh;
+        width: 100vw;
+        background: url(/images/rain.png);
+        z-index: 2;       
+        padding: 0;
+        margin: 0;
+        animation: rain 0.4s linear infinite;
+        position: fixed;
+      }
+
+      .rain-container:before {
+        margin: 0;
+        padding: 0;
+        content: '';
+        width: 100%;
+        height: 100vh;
+        background: #ffffff8a;
+        /* animation: lighting 4s linear infinite; */
+        opacity: 0;
+        padding: 0;
+      }
+
+      @keyframes rain {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 5% 100%;
+        }
+      }
+
+
+      /* @keyframes lighting {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 0;
+        }
+        11% {
+          opacity: 1;
+        }
+        14% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0;
+        }
+        21% {
+          opacity: 1;
+        }
+        24% {
+          opacity: 0;
+        }
+        104% {
+          opacity: 0;
+        }
+      } */
+
+      
+      .rain_sound {
+        position: relative;
+        padding-top: 1%;
+        float: right;
+        z-index: 3000;
+        outline: none;
+        margin-bottom: 10px;
+        margin-right: 5%;
+      }
+
+      .rain-sound:hover,.rain-sound:active,.rain-sound:focus {
+        outline: none;
+        border: none;
+      }
+
+      .rain-btn {
+        border-radius: 2rem;
+        margin-left: 5%;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        font-family: 'DotGothic16', sans-serif;
+        border: double;
+        font-weight: 600;
+        cursor: pointer;
+        z-index: 200;
+        margin-bottom: 2px;
+        position: absolute;
+        background-color: #ffffff3b;
+      }
+
+      .rain-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+      }
+
+      .story-styles {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        text-align:center;
+        color:lightgray;
+         position:absolute;  
+        height: auto;
+        width: auto;
+        margin: 250px;
+        font-size:x-large;
+        background-color: transparent;
+        z-index: 1001; 
+         /* Starting position */
+ -moz-transform:translateY(100%);
+ -webkit-transform:translateY(100%);	
+ transform:translateY(100%);
+      }
+
+      .story{
+ /* Apply animation to this element */	
+ -moz-animation: story 25s linear 1;
+ -webkit-animation: story 25s linear 1;
+ animation: story 25s linear 1;
+      }
+
+/* Move it (define the animation) */
+@-moz-keyframes story {
+ 0%   { -moz-transform: translateY(100%); }
+ 100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes story {
+ 0%   { -webkit-transform: translateY(100%); }
+ 100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes story {
+ 0%   { 
+ -moz-transform: translateY(100%); /* Browser bug fix */
+ -webkit-transform: translateY(100%); /* Browser bug fix */
+ transform: translateY(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateY(-400%); /* Browser bug fix */
+ -webkit-transform: translateY(-400%); /* Browser bug fix */
+ transform: translateY(-400%); 
+ }
+}
+.story:hover {
+ -moz-animation-play-state: paused;
+ -webkit-animation-play-state: paused;
+ animation-play-state: paused;
+ }
+
+ .story-btn {
+  position:absolute ;
+  display: inline-block;
+  z-index: 1002;
+  left:220px;
+  top: 8px;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ffffff3b;
+  border-color: #000000;
+  cursor: pointer;
+  border:double;
+  color: black;
+  font-family: 'DotGothic16', sans-serif;
+  font-weight:600;
+  outline: none;
+}
+.story-btn:hover,.rain-btn:active,.rain-btn:focus {
+        background-color: #ffffff8a !important;
+        border-color: #000000;
+        color: #000000;
+        font-weight: 800;
+        outline: none !important;
+        font-weight:600;
+      }
+
+
+@media screen and (max-width:700px)
+ {
+   .rain-btn {
+     visibility: hidden;
+   }
+
+   .story-btn {
+     display: block;
+     margin-top: 20%;
+   }
+
+   .rain-container {
+      background: none;
+   }
+
+   .story-styles {
+     margin: 3%;
+     font-size: 0.8rem;
+     -moz-transform:translateY(140%);
+      -webkit-transform:translateY(140%);	
+      transform:translateY(140%);
+   }
+
+   .story{
+ /* Apply animation to this element */	
+ -moz-animation: story 10s linear 1;
+ -webkit-animation: story 25s linear 1;
+ animation: story 50s linear 1;
+      }
+
+ }
+
+
+    </style>
+    
+  </head>
+  <body>
+            <button class="rain-btn" onclick="openFullscreen();">Go  Fullscreen</button>
+              <audio controls loop autoplay class="rain_sound" >
+                <source src="/sounds/rain_s.mp3" type="audio/mp3">
+              </audio>
+    <div class="rain-container" controls id="myvideo">
+ 
+      <div class="rain">          
+      </div>
+      <button class="story-btn">Read a story</button>
+      <div class="story-styles" id="storyId">
+        The gentle spray that touches your face is refreshing, to say the least.
+        <br> A break from your monotonous nine to five cycle 
+        <br>and an escape into the wilderness-
+        <br> the sudden plan was not a mistake after all.
+        <br><br>Back here sitting in this simple habitat of the 
+        <br>gypsies and munching on roasted peanuts,
+        <br> you realize that life is so much simpler than it sometimes reveals itself to be. 
+        <br><br>Just like the clearing of the forest where your hut has been set down on,
+        <br> there is also a clearing in your own life.
+        <br>And you get there the same way you got here, 
+        <br>by following your instinct and the map.
+        <br> Right through the woods, never past it.
+        <br><br>The rain washing down all the dirt of the past
+        <br> while you mourn the gone makes you feel 
+        <br>lighter than you have been in a while.
+        <br> Someday soon, you know, you will have moved on from what has held you back. 
+        <br><br>As you follow the trail of your thoughts freely,
+        <br> the hundreds of forest sounds all muffled together 
+        <br>like a nightly jazz almost makes you wonder
+        <br> why you would ever go back home.
+        <br><br><br>‘But you know why’, your heart whispers.
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        var elem = document.getElementById("myvideo");
+        function openFullscreen() {
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+          }
+        }
+      </script>
+
+<script> 
+        // function toggleCheck(){
+        //   var playing = false;
+        //   var st=document.getElementById("storyId");
+        //   if( !playing ){
+        //     //var st=document.getElementById("storyId");
+        //     playing=true;  
+        //   st.classList.add("story");
+        //   this.innerText = 'Quit Story';
+        //   }
+        //   else{
+        //     //var st=document.getElementById("storyId");
+        //   st.classList.remove("story");
+        //   playing=false;
+        //   }
+        // }
+       
+       var button = document.querySelector(".story-btn");
+        var playing = false;
+        var st=document.getElementById("storyId");
+button.addEventListener ("click", function (){
+    if ( !playing ) { // If not playing
+        
+        st.classList.add("story");
+
+        // `this` refers to `button`
+        // `innerText` refers to text content in `button`
+        this.innerText = 'Quit Story'; 
+        playing = true;
+    } else {
+        
+        st.classList.remove("story");
+        
+        this.innerText = 'Read a Story';
+        playing = false;
+    }
 });
-
-var wave2 = $('#feel-the-wave-two').wavify({
-  height: 360,
-  bones: 3,
-  amplitude: 40,
-  color: 'rgb(0, 128, 255)',
-  speed: .25
-});
-
-var wave3 = $('#feel-the-wave-three').wavify({
-  height: 420,
-  bones: 2,
-  amplitude: 30,
-  color: 'rgb(0, 64, 255)',
-  speed: .25
-});
-
-
-
+        
 
 
     </script>
