@@ -39,7 +39,7 @@ We utilized various technologies ranging from animation tools, web development t
 - Spotify API: To fetch and manage the relevant catalogs about artists, tracks and playlists.  
 - Microsoft Azure: To create a conversational, friendly echo chatbot for rythMind which engages in a friendly conversation with the user helping him/her/them talk about their emotions and guiding them towards a calming experience by suggesting relevant songs, playlists, meditation or breathing exercises.
 
-## Improvements Made During the Hackathon
+## Improvements Made During HackNITR 2.0 Hackathon
 - echoAR: Incorporated echoAR's 3D models for providing a visually rich and engrossing environment to users. 
 - Pexels API: To fetch images corresponding to the emotions displayed on our web app presently. 
 - Socket.io: To build multiple listening rooms, each dedicated to a particular feeling or emotion with songs playing according to the mood of the room. Users in the same room can also chat with each other while listening to music.
