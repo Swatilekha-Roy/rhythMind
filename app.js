@@ -191,8 +191,8 @@ request.get(option ,function(error, response, body){
  //console for images
  images=[];
   for(i=0;i<12;i++){
-    images.push(body.photos[i].src.large);
-    console.log(body.photos[i].src.large); //images for slideshow
+    images.push(body.photos[i].src.landscape);
+    console.log(body.photos[i].src.landscape); //images for slideshow
   }
 })
  
