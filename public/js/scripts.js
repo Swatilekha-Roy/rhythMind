@@ -3,6 +3,7 @@
 
 // typing effect
 
+
 const words = ["calm","excited","romantic","anxious","depressed","cheerful","excited", "sleepy", "gloomy"];
 let i = 0;
 let timer;
