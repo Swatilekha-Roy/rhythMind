@@ -13,7 +13,7 @@ After cloning the repo
 - This will start the project automatically on `localhost:3000`.
 
 ## How to start ? 🎪
-(http://pa1.narvii.com/6468/75242fadf2cc1df5ca1f5f8a1906a6a9db572dca_00.gif)
+[!http://pa1.narvii.com/6468/75242fadf2cc1df5ca1f5f8a1906a6a9db572dca_00.gif]
 - If you don't have git on your machine, [install](https://docs.github.com/en/github/getting-started-with-github/set-up-git) it.
 
 ## Fork this repository 🚀
