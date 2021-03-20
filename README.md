@@ -50,6 +50,6 @@ where "url you just copied" (without the quotation marks) is the url to this rep
 For example:
 
 ```
-git clone https://github.com/chehak123/GirlMeetup.git
+git clone https://github.com/chehak123/rhythMind.git
 ```
 
