@@ -25,7 +25,7 @@ It provides a well earned respite and relief to the tired mind and soul through 
 
 ## How to start ? 🎪
 
-<p align= "center"><img width=55% src="https://media.giphy.com/media/JqzadBtonJVr0u8LUg/giphy.gif"></p>
+<p align= "center"><img width=55% src="http://pa1.narvii.com/6468/75242fadf2cc1df5ca1f5f8a1906a6a9db572dca_00.gif"></p>
 <br>
 
 #### If you don't have git on your machine, [install](https://help.github.com/articles/set-up-git/) it.
