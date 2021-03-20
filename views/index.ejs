@@ -5,8 +5,8 @@
 
 		<!-- Required meta tags -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         
         <title>rhythMind</title>
 
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="/images/favicon.png">
+        <link rel="shortcut icon" href="images/favicon.png">
 
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -64,7 +64,7 @@
 		                    <a class="nav-link scroll-link" href="#blog">BLOGS</a>
 		                </li>
 		                <li class="nav-item">
-		                    <a class="nav-link scroll-link disabled" href="#">LISTENING ROOM</a>
+		                    <a class="nav-link scroll-link" href="#">LISTENING ROOM</a>
 		                </li>
 						
 						<li class="nav-item">
@@ -94,15 +94,13 @@
 			</div>
 			<br>
 			<div style= "margin-left: 5vw;">
-				<div class="feeling-buttons flex col-md-9 offset-md-2 top-text">
-
-
+				<div class="feeling-buttons flex col-xs-12 col-md-9 offset-md-2 top-text">
 
 					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
-						<button type="button" class="btn mood" onclick="feelAlert()" >Calm</button>
+						<button type="button" class="btn mood" onclick="feelAlert()" >Depressed</button>
 						<% } else { %>
 						<!-- logged in code -->
-						<a href="<%=currentUser%>/search/calm/#songs"><button type="button" class="btn mood">Calm</button></a>
+						<a href="<%=currentUser%>/search/depressed/#songs"><button type="button" class="btn mood">Depressed</button></a>
 					<% } %>
 
 				
@@ -120,7 +118,7 @@
 					<% } %>
 				</div>
 	
-				<div class="feeling-buttons2 flex col-md-9 offset-md-2 top-text">
+				<div class="feeling-buttons2 flex col-xs-5 col-md-9 offset-md-2 top-text">
 					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
 						<button type="button" class="btn mood" onclick="feelAlert()" >Excited</button>
 						<% } else { %>
@@ -135,7 +133,7 @@
 					<% } %>
 				</div>
 	
-				<div class="feeling-buttons flex col-md-9 offset-md-2 top-text">
+				<div class="feeling-buttons flex col-xs-5 col-md-9 offset-md-2 top-text">
 					<% if(!(currentUser !== undefined && currentUser !== '')) { %>
 						<button type="button" class="btn mood" onclick="feelAlert()" >Anxious</button>
 						<% } else { %>
@@ -143,10 +141,10 @@
 					<a href="<%=currentUser%>/search/anxious/#songs"><button type="button" class="btn mood">Anxious</button>
 						<% } %>
 						<% if(!(currentUser !== undefined && currentUser !== '')) { %>
-							<button type="button" class="btn mood" onclick="feelAlert()" >Depressed</button>
+							<button type="button" class="btn mood" onclick="feelAlert()" >Calm</button>
 							<% } else { %>
 							<!-- logged in code -->
-						<a href="<%=currentUser%>/search/depressed/#songs"><button type="button" class="btn mood">Depressed</button></a>
+						<a href="<%=currentUser%>/search/calm/#songs"><button type="button" class="btn mood">Calm</button></a>
 						<% } %>
 						<% if(!(currentUser !== undefined && currentUser !== '')) { %>
 							<button type="button" class="btn mood" onclick="feelAlert()" >Cheerful</button>
@@ -163,61 +161,63 @@
 <div id="songs">
 <% if(songs.s1) { %>
 	<h3><strong>Songs Recommended</strong></h3>
-	<iframe src="https://open.spotify.com/embed/track/<%=songs.s1%>" width="300" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-	<iframe src="https://open.spotify.com/embed/track/<%=songs.s2%>" width="300" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://open.spotify.com/embed/track/<%=songs.s1%>" width="300" height="90" style="margin-right: 3%;" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://open.spotify.com/embed/track/<%=songs.s2%>" width="300" height="90" style="margin-left: 3%;" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 	<br><br><br>
-	<h3><strong>Playlist Recommended</strong></h3>
-	<iframe src="https://open.spotify.com/embed/playlist/<%=songs.p1%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-	<iframe src="https://open.spotify.com/embed/playlist/<%=songs.p2%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<h3><strong>Playlists Recommended</strong></h3>
+	<iframe src="https://open.spotify.com/embed/playlist/<%=songs.p1%>" width="300" height="380" frameborder="0" style="margin-right: 7%;" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://open.spotify.com/embed/playlist/<%=songs.p2%>" width="300" height="380" frameborder="0" style="margin-left: 7%;" allowtransparency="true" allow="encrypted-media"></iframe>
 	<br><br><br>
-	<h3><strong>Album Recommended</strong></h3>
-	<iframe src="https://open.spotify.com/embed/album/<%=songs.a1%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-	<iframe src="https://open.spotify.com/embed/album/<%=songs.a2%>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	<h3><strong>Albums Recommended</strong></h3>
+	<iframe src="https://open.spotify.com/embed/album/<%=songs.a1%>" width="300" height="380" frameborder="0" style="margin-right: 11%;" allowtransparency="true" allow="encrypted-media"></iframe>
+	<iframe src="https://open.spotify.com/embed/album/<%=songs.a2%>" width="300" height="380" frameborder="0" style="margin-left: 11%;" allowtransparency="true" allow="encrypted-media"></iframe>
 	<% } %>
 </div>
 
 
 
-  
+<!-- <% if(songs.s1) { %> -->
 	<!-- The slideshow -->
-	<div class="carousel-inner carousel slide" data-attributes="true" data-ride="carousel">
+	<div class="carousel-inner pexels-carousel carousel slide" data-attributes="true" data-ride="carousel">
 	  <div class="carousel-item active" >
-		<img src=<%=image[0]%> alt="Los Angeles">
+		<img src=<%=image[0]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[1]%> alt="Chicago">
+		<img src=<%=image[1]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[2]%> alt="New York">
+		<img src=<%=image[2]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[3]%> alt="New York">
+		<img src=<%=image[3]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[4]%> alt="New York">
+		<img src=<%=image[4]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[5]%> alt="New York">
+		<img src=<%=image[5]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[6]%> alt="New York">
+		<img src=<%=image[6]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[7]%> alt="New York">
+		<img src=<%=image[7]%>>
 	  </div>
 	   <div class="carousel-item">
-		<img src=<%=image[8]%> alt="New York">
+		<img src=<%=image[8]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[9]%> alt="New York">
+		<img src=<%=image[9]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[10]%> alt="New York">
+		<img src=<%=image[10]%>>
 	  </div>
 	  <div class="carousel-item">
-		<img src=<%=image[11]%> alt="New York">
+		<img src=<%=image[11]%>>
 	  </div>
 	</div>
+
+	<!-- <% } %> -->
   
 	<!-- Left and right controls -->
 	<a class="carousel-control-prev"  role="button" data-slide="prev">
@@ -252,9 +252,9 @@
             </div>
 			</div>
 
-
-			<div style="width: 100vw; height: 90vh; margin-top:20vh;">
-				<h2 style="text-align: left; margin: 2%; font-size: 35px;"><strong>Let's exercise together!</strong></h2>
+		<!-- Breathing section -->
+			<div class="breathe-in" style="width: 100vw; height: 90vh; margin-top:20vh;">
+				<h2 style="text-align: left; margin: 2%; font-size: 40px;"><strong>Let's breathe together!</strong></h2>
 				<br>
 				<div class="landscape">
 					<p>Breathe In</p>
@@ -262,13 +262,13 @@
 				<div class="glass">
 					<p>Breathe Out</p>
 				</div>
-				</div>
+			</div>
 
 		<!-- How We Work -->
         <div id="medisleep" class="how-container section-container">
         	<div class="container">
         		<div class="row">
-        			<div class="col-12 col-md-6 col-lg-6 medi how-us-box wow fadeInLeft">
+        			<div class="col-12 col-md-6 col-lg-6 wow fadeInLeft">
 	                    <div class="meditate-text float-left">
 	                    	<h3 style="font-size: 30px;"><strong>Meditate (because you deserve it)</strong></h3>
 							<br>
@@ -278,7 +278,7 @@
 							</div>
 	                    </div>
 	                </div>
-        			<div class="col-12 col-md-6 col-lg-6 how-us-box wow fadeInRight">
+        			<div class="col-12 col-md-6 col-lg-6 sleep-box wow fadeInRight">
 	                    <div class="sleep-text float-right">
 	                    	<h3 style="font-size: 30px;"><strong>Sleep Sound Tonight</strong></h3>
 
@@ -299,7 +299,7 @@
 		<h2 style="font-size: 30px; text-align: left; margin-left: 4%; margin-top: 120px;">Somewhere Else</h2>
 			<p style="text-align: left; margin-left: 4%;"">
 				Immerse yourself in our unique listening experience which will leave you all calm and fulfilled. <br>
-				For best experience, we recommend using headphones or earphones.
+				For best experience, we recommend using a desktop screen and headphones or earphones.
 			</p>
 			<br>
 			<br>
@@ -325,16 +325,15 @@
 						one over the other. The light glow of the lantern beside you with its quivering flame...
 						
 					</p>
-					<br>
+					
 					<p id="text" class="wow fadeInRight" data-wow-duration="15s">
 					  ...almost feels like a hug which makes you smile to yourself. Your thoughts are only 
-					  interrupted by the occasional sound of a distant animal calling its mate and the gentle pitter patter.
+					  interrupted by the occasional gentle pitter patter.
 					  
 					  
 					</p>
-					<br>
-					<br><br><br>
-					<a href="/landscape/rain" title="Button push blue/green" class="wow slideInLeft button btnPush" data-wow-duration="15s">Take Me to the Forest</a>                    					
+					
+					<a href="/landscape/rain" title="Button push blue/green" class="button btnPush wow slideInLeft" data-wow-duration="15s">Take Me to the Forest</a>                    					
 			  </div>
 			  </div>
 
@@ -344,13 +343,12 @@
 					<!-- <h5>First slide label</h5> -->
 					<p class="wow fadeIn">Think about that one time you ended up in the wilderness all alone on a sleeping bag, gazing up at
 						 the stars and wishing on them. And while you watched, the clouds cleared themselves…
-					</p><br>
+					</p>
 					<p id="text" class="wow fadeInRight" data-wow-duration="15s">
 						…and the sky got even brighter than usual, with dozens of stars of
 						 the land joining in the symphony of the beautiful night. Oh, stars of the night.
 					</p>
-					<br>
-					<br><br><br>
+					
                      
 					
 					<a href="/landscape/fireflies" title="Button push blue/green" class="wow slideInLeft button btnPush" data-wow-duration="15s">Take Me to the Camp</a>
@@ -364,13 +362,13 @@
 					<!-- <h5>First slide label</h5> -->
 					<p class="wow fadeIn">Think about how it’s that time of the year again. The logs in the fireplace are cracking 
 						softly and the air is filled with the chill of a night right after it snows…
-					</p><br>
+					</p>
 					<p id="text" class="wow fadeInRight" data-wow-duration="15s">
 						…and you pull the blankets around yourself tighter, pulling your knees further in.
 						 You look expectantly out through the windows wishing it would snow again tonight.
 
 					</p>
-					<br><br><br><br>
+					
                      
 					<a href="/landscape/snow" title="Button push blue/green" class="wow slideInLeft button btnPush" data-wow-duration="15s">Take Me to the Mountains</a>				
 					</div>
@@ -384,13 +382,12 @@
 				<div class="carousel-caption text-lg-left d-md-block" style="top:15vh;">
 					<!-- <h5>First slide label</h5> -->
 					<p class="wow fadeIn">The seashells are bulging from your pocket and your flip flops are sandy and spray wet. You are staring straight ahead at the vast blue expanse...
-					</p><br>
+					</p>
 					<p id="text" class="wow fadeInRight" data-wow-duration="15s">
-		
 
 						...just when a gull screeches somewhere nearby. Your favorite book is right by your side, waiting to be opened.
 
-					</p><br><br><br>
+					</p>
                      
 					<a href="/landscape/sea" title="Button push blue/green" class="wow slideInLeft button btnPush" data-wow-duration="15s">Take Me to the Sea</a>
 			  </div>
@@ -431,7 +428,7 @@
                 </div>
                 <h3><a href="https://au.reachout.com/articles/how-to-use-music-for-mental-health">How to use music for mental health</a> <i class="fas fa-angle-right"></i></h3>
                  <div class="portfolio-box-date"><i class="fas fa-blog" style="color: rgb(48, 46, 97);"></i> REACHOUT.com</div> 
-                <p>It doesn’t matter if you love metal, pop or EDM, music can help your mood and help you cope with (or even take control of) tricky emotions... <a href="https://au.reachout.com/articles/how-to-use-music-for-mental-health">Read more</a></p>
+                <p>It doesn’t matter if you love metal, pop or EDM, music can help your mood and help you cope with (or even take control of) tricky emotions...<a href="https://au.reachout.com/articles/how-to-use-music-for-mental-health">Read more</a></p>
             </div>
             <div class="col-md-4 portfolio-box wow fadeInDown">
                 <div class="portfolio-box-image">
@@ -446,11 +443,40 @@
     </div>
 </div>
 
-<button id="open" class="open-button" onclick="openForm()">Chat</button>
+
+		<div class="row" style="margin-bottom: 20vh; margin-top: 10vh; background-color: whitesmoke;">
+			<div class="col-12 col-md-8 col-lg-8 about-us-box wow slideInLeft">
+				<div class="build-box-img">
+					<img class="story" src="images/listening.png" alt="about" style="width: 100%;">
+				</div>
+			</div>
+			<div class="col-12 col-md-4 col-lg-4 build-box wow fadeInRight">
+				<div class="build-box-text float-right" style="padding-right: 20px; padding-top: 30%; padding-bottom: 30%;">	                    	
+					<p class="medium-paragraph">
+						<h4 style="line-height: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h4>
+						
+					</p>
+
+					<a href="https://listeningtogether.atspotify.com/"><i style="cursor: pointer;" class="fas fa-angle-double-right fa-4x"></i></a>
+				</div>
+			</div>
+			
+		</div>
+
+		<widgetbot
+    server="822508865294696538"
+    channel="822508865294696541"
+    width="800"
+    height="600"
+></widgetbot>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+
+<button id="open" class="open-button" onclick="openForm()" style="z-index: 1; position: fixed;">Chat</button>
     <div class="chat-popup" id="myForm">
-    <iframe src='https://webchat.botframework.com/embed/Buzzz_Bot?s=c0AALM926l8.b6q7w5YGl6ZmBtRI9Xm5_BziLQsqQBQvCTe9z4YypIU'  style='border: 2px solid rgb(172, 172, 233); border-radius:10px; min-width: 350px; width: 50%; min-height: 450px; align-content: center; margin-right:100px;'></iframe>
-    <button id="open" class="open-button" onclick="openForm()">x</button>
+    <iframe src='https://webchat.botframework.com/embed/Buzzz_Bot?s=c0AALM926l8.b6q7w5YGl6ZmBtRI9Xm5_BziLQsqQBQvCTe9z4YypIU'  style='border: 2px solid rgb(172, 172, 233); border-radius:10px; width: 320px; height: 420px; align-content: center; margin-right:100px;'></iframe>
+<button id="open" class="open-button" onclick="openForm()">x</button>
 </div>
+
         <!-- Footer -->
         <footer>
 	        <div class="container">
@@ -462,15 +488,29 @@
                     </div>
                     
                     <div class="col-md-6 offset-md-1 footer-right">
+                        <h3 style="color: white;">Subscribe to Newsletter</h3>
+						<form action="" id="subsFrm" method="POST">
+							<input type="email" name="email" id="email" placeholder="malala@extraordinary.com" required><br>
+							<input type="text" name="name" id="name" placeholder="Gal Gadot" required>           <br>
+							<span class="input-group-btn">
+							  <button class="btn btn-default" id="subscribeBtn" value="Subscribe Now" type="submit"><i class="fa fa-envelope fa-2x fa-mail" aria-hidden="true"></i></button>
+							</span>
+						  </form>
+
+						  <br>
 						<a href="https://github.com/Swatilekha-Roy/rhythMind"><i class="fab fa-github"></i></a>
 						<a href="mailto:swatilekha.roy4@gmail.com"><i class="fa fa-envelope"></i></a>
+						<a href="https://creator.voiceflow.com/prototype/604e43194c150f00066c4446"><i class="fa fa-robot"></i></a>
+
                     </div>
+
                 </div>
                 <div class="row">
                 	<div class="col footer-bottom">
 		           		<a class="scroll-link" href="#top-content-id"><i class="fas fa-chevron-up"></i></a>
 		           	</div>
                 </div>
+				
 	        </div>
         </footer>
 
