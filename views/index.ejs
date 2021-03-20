@@ -482,8 +482,9 @@
 		<main class="join-main">
 			<form action="chat.html">
 				<div class="form-control" style="background-color: transparent; border-color: transparent;">
-					<label for="username">Username</label>
+					<label for="username" style="font-weight: 800; text-align: left; font-size: 17px;">Username</label>
 					<input
+					    style="border-color: transparent; border-radius: 5px;"
 						type="text"
 						name="username"
 						id="username"
@@ -491,9 +492,9 @@
 						required
 					/>
 				</div>
-				<div class="form-control" style="background-color: transparent; border-color: transparent;>
-					<label for="room">Room</label>
-					<select name="room" id="room">
+				<div class="form-control" style="background-color: transparent; border-color: transparent;">
+					<label for="room" style="font-weight: 800; text-align: left; font-size: 17px;">Choose your Room</label>
+					<select name="room" id="room" style="border-color: transparent; border-radius: 5px;">
 						<option value="JavaScript">JavaScript</option>
 						<option value="Python">Python</option>
 						<option value="PHP">PHP</option>
@@ -502,7 +503,7 @@
 						<option value="Java">Java</option>
 					</select>
 				</div>
-				<button type="submit" class="room-btn" style="color: black;">Join Chat</button>
+				<button type="submit" class="btn btn-primary room-btn" style="color: black; width: 170px;">Join Chat</button>
 			</form>
 		</main>
 	</div>
