@@ -4,6 +4,9 @@ A web app that plays music according to your emotional needs and helps you recha
 ## What it Does
 It provides a well earned respite and relief to the tired mind and soul through music and a variety of proven meditative reliefs and stress busting techniques to anybody who is stressed out or feeling negative about something. We have also tried to make an immersive listening experience with soothing landscapes and build up situational stories that are meant to release stress and feel transformative. There is also a friendly bot to answer your questions and a blog section featuring related music therapy articles.
 
+## Demo link
+https://rhythmind.herokuapp.com/
+
 ## How to run ? 🛴
 After cloning the repo
 - Run `npm install` in the terminal.
@@ -46,3 +49,5 @@ We utilized various technologies ranging from animation tools, web development t
 - Voiceflow: Used HACKNITR 2.0 sponsor resources for developing a comprehensive voice channel bot. 
 - Constant Contact email marketing tools: To set up a newsletter service for our subscribed users. 
 - Trained the Microsoft Azure chatbot further for more personalized conversations.
+- Making the web app a lot more responsive so as to allow easy viewing and good UX for every screen size.
+- Adding all the animations with CSS and JS to the landscape pages.
