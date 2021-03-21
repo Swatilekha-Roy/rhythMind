@@ -29,7 +29,7 @@ where "url you just copied" (without the quotation marks) is the url to this rep
 
 For example:
 
-`git clone https://github.com/chehak123/rhythMind.git`
+`git clone https://github.com/Swatilekha-Roy/rhythMind.git`
 
 ## Technologies Used
 We utilized various technologies ranging from animation tools, web development tools, scripting languages and multiple APIs to build ‘rythMind’. 
@@ -46,4 +46,3 @@ We utilized various technologies ranging from animation tools, web development t
 - Voiceflow: Used HACKNITR 2.0 sponsor resources for developing a comprehensive voice channel bot. 
 - Constant Contact email marketing tools: To set up a newsletter service for our subscribed users. 
 - Trained the Microsoft Azure chatbot further for more personalized conversations.
-
