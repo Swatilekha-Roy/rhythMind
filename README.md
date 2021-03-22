@@ -7,13 +7,6 @@ It provides a well earned respite and relief to the tired mind and soul through 
 ## Demo link
 https://rhythmind.herokuapp.com/
 
-## How to run ? 🛴
-After cloning the repo
-- Run `npm install` in the terminal.
-- Install dependencies
-- Run `npm install -g nodemon`
-- Move on and run `node app.js`
-- This will start the project automatically on `localhost:3000`.
 
 ## How to start ? 🎪
 ![](http://pa1.narvii.com/6468/75242fadf2cc1df5ca1f5f8a1906a6a9db572dca_00.gif)
@@ -33,6 +26,14 @@ where "url you just copied" (without the quotation marks) is the url to this rep
 For example:
 
 `git clone https://github.com/Swatilekha-Roy/rhythMind.git`
+
+## How to run ? 🛴
+After cloning the repo
+- Run `npm install` in the terminal.
+- Install dependencies
+- Run `npm install -g nodemon` (optional, but recommended)
+- Move on and run `node app.js`
+- This will start the project automatically on `localhost:3000`.
 
 ## Technologies Used
 We utilized various technologies ranging from animation tools, web development tools, scripting languages and multiple APIs to build ‘rythMind’. 
