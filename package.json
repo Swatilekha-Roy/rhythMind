@@ -8,15 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Swatilekha-Roy/rhythMind"
+    "type": "git"
   },
   "author": "Chehak Nandini Soumi Swatilekha",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Swatilekha-Roy/rhythMind/issues"
-  },
-  "homepage": "https://github.com/Swatilekha-Roy/rhythMind/blob/main/README.md",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
