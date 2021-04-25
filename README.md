@@ -4,13 +4,9 @@ A web app that plays music according to your emotional needs and helps you recha
 ## What it Does
 It provides a well earned respite and relief to the tired mind and soul through music and a variety of proven meditative reliefs and stress busting techniques to anybody who is stressed out or feeling negative about something. We have also tried to make an immersive listening experience with soothing landscapes and build up situational stories that are meant to release stress and feel transformative. There is also a friendly bot to answer your questions and a blog section featuring related music therapy articles.
 
-## How to run ? 🛴
-After cloning the repo
-- Run `npm install` in the terminal.
-- Install dependencies
-- Run `npm install -g nodemon`
-- Move on and run `node app.js`
-- This will start the project automatically on `localhost:3000`.
+## Demo link
+https://rhythmind.herokuapp.com/
+
 
 ## How to start ? 🎪
 ![](http://pa1.narvii.com/6468/75242fadf2cc1df5ca1f5f8a1906a6a9db572dca_00.gif)
@@ -29,7 +25,15 @@ where "url you just copied" (without the quotation marks) is the url to this rep
 
 For example:
 
-`git clone https://github.com/chehak123/rhythMind.git`
+`git clone https://github.com/Swatilekha-Roy/rhythMind.git`
+
+## How to run ? 🛴
+After cloning the repo
+- Run `npm install` in the terminal.
+- Install dependencies
+- Run `npm install -g nodemon` (optional, but recommended)
+- Move on and run `node app.js`
+- This will start the project automatically on `localhost:3000`.
 
 ## Technologies Used
 We utilized various technologies ranging from animation tools, web development tools, scripting languages and multiple APIs to build ‘rythMind’. 
@@ -46,4 +50,5 @@ We utilized various technologies ranging from animation tools, web development t
 - Voiceflow: Used HACKNITR 2.0 sponsor resources for developing a comprehensive voice channel bot. 
 - Constant Contact email marketing tools: To set up a newsletter service for our subscribed users. 
 - Trained the Microsoft Azure chatbot further for more personalized conversations.
-
+- Making the web app a lot more responsive so as to allow easy viewing and good UX for every screen size.
+- Adding all the animations with CSS and JS to the landscape pages.
