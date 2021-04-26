@@ -1,5 +1,5 @@
 {
-  "name": "rhythmind",
+  "name": "rythmind",
   "version": "1.0.0",
   "description": "A web app that plays music according to your emotional needs and helps you recharge your mental health with an altogether new and different listening experience.",
   "main": "app.js",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git"
   },
-  "author": "Chehak Nandini Soumi Swatilekha",
+  "author": "Chehak Nandini",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
