@@ -7,9 +7,6 @@ It provides a well earned respite and relief to the tired mind and soul through 
 ## Demo link
 https://rhythmind.herokuapp.com/
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=Swatilekha-Roy.visitor-badge)
-
-
 ## How to start ? 🎪
 ![](http://pa1.narvii.com/6468/75242fadf2cc1df5ca1f5f8a1906a6a9db572dca_00.gif)
 - If you don't have git on your machine, [install](https://docs.github.com/en/github/getting-started-with-github/set-up-git) it.
